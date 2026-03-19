@@ -1,0 +1,78 @@
+{
+  "id": "moto-edge-60-pro",
+  "name": "Motorola Edge 60 Pro",
+  "brand": "Motorola",
+  "category": "Motorola",
+  "image": "assets/images/products/moto-edge-60pro-fantone-DazzlingBlue.jpg",
+  "colors": [
+    {
+      "name": "Pantone Sparkling Grape",
+      "images": [
+        "assets/images/products/moto-edge-60pro-fantone-SparklingGrape.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Dazzling Blue",
+      "images": [
+        "assets/images/products/moto-edge-60pro-fantone-DazzlingBlue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pantone Walnut",
+      "images": [
+        "assets/images/products/moto-edge-60pro-fantone-Walnut.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pantone Shadow",
+      "images": [
+        "assets/images/products/moto-edge-60pro-fantone-Shadow.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 36955,
+      "discount": 8,
+      "available": true
+    },
+    {
+      "id": "512-16",
+      "ram": "16 GB",
+      "storage": "512 GB",
+      "price": 40859,
+      "discount": 7,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 31578,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pantone Dazzling Blue",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 8350 Extreme",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP + 50 MP + 10 MP",
+    "Battery": "6000 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "vivo-y19s-5G",
+  "name": "Vivo Y19s 5G",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-y19s-5g-Green.jpg",
+  "colors": [
+    {
+      "name": "Majestic Green",
+      "images": [
+        "assets/images/products/vivo-y19s-5g-Green.jpg"
+        
+      ]
+    },
+    {
+      "name": "Titanium Silver",
+      "images": [
+        "assets/images/products/vivo-y19s-5g-silver.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "64-4",
+      "ram": "4 GB",
+      "storage": "64 GB",
+      "price": 13157,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 14515,
+      "discount": 7,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 17032,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Majestic Green",
+    "variant": "64-4"
+  },
+  "specs": {
+    "Processor": "Dimensity 6300",
+    "Front Camera": "5 MP",
+    "Back Camera": "13 MP + 0.8 MP",
+    "Battery": "5500 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

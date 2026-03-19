@@ -1,0 +1,77 @@
+{
+  "id": "samsung-A36",
+  "name": "Samsung A36",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-A36-AwesomeLavender.jpg",
+  "colors": [
+    {
+      "name": "Awesome Black",
+      "images": [
+        "assets/images/products/samsung-A36-AwesomeBlack.jpg"
+        
+      ]
+    },
+    {
+      "name": "Awesome White",
+      "images": [
+        "assets/images/products/samsung-A36-Awesomewhite.jpg"
+       
+      ]
+    },
+    {
+      "name": "Awesome Lime",
+      "images": [
+        "assets/images/products/samsung-A36-AwesomeLime.jpg"
+       
+      ]
+    },
+    {
+      "name": "Awesome Lavender",
+      "images": [
+        "assets/images/products/samsung-A36-AwesomeLavender.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 33853,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 38829,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 44021,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Awesome Lavender",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 6 Gen 3",
+    "Front Camera": "12 MP",
+    "Back Camera": "50 MP + 5 MP + 2 MP",
+    "Battery": "5000 mAh",
+    "Display": "Super AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

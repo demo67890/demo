@@ -1,0 +1,62 @@
+{
+  "id": "samsung-A07-5G",
+  "name": "Samsung A07 5G",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-A07-5G-lightgreen.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/samsung-A07-5G-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Light Green",
+      "images": [
+        "assets/images/products/samsung-A07-5G-lightgreen.jpg"
+       
+      ]
+    },
+    {
+      "name": "Light Violet",
+      "images": [
+        "assets/images/products/samsung-A07-5G-lightviolet.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 16841,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 19354,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Light Green",
+    "variant": "128-4"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 6300 ",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "6000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "moto-G57",
+  "name": "Motorola G57",
+  "brand": "Motorola",
+  "category": "Motorola",
+  "image": "assets/images/products/moto-g57-Fluiditi.jpg",
+  "colors": [
+    {
+      "name": "Pantone Corsair",
+      "images": [
+        "assets/images/products/moto-g57-Pantone-Corsair.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Regatta",
+      "images": [
+        "assets/images/products/moto-g57-Regata.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Fluidity",
+      "images": [
+        "assets/images/products/moto-g57-Fluiditi.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 15788,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pantone Fluidity",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 6s Gen 4",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP + 8 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

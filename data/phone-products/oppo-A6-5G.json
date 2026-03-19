@@ -1,0 +1,69 @@
+{
+  "id": "oppo-A6-5G",
+  "name": "Oppo A6 5G",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-A6-5g-white.jpg",
+  "colors": [
+    {
+      "name": "Ice White",
+      "images": [
+        "assets/images/products/oppo-A6-5g-white.jpg"
+        
+      ]
+    },
+    {
+      "name": "Sapphire Blue",
+      "images": [
+        "assets/images/products/oppo-A6-5g-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Sakura Pink",
+      "images": [
+        "assets/images/products/oppo-A6-5g-pink.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 18556,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 21052,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-6",
+      "ram": "6 GB",
+      "storage": "256 GB",
+      "price": 23655,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Ice White",
+    "variant": "128-4"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 6300",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

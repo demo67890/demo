@@ -1,0 +1,78 @@
+{
+  "id": "samsung-z-flip-7",
+  "name": "Samsung Z Flip 7",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-Z-Flip-7-CoralRed.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/samsung-Z-Flip-7-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Blue Shadow",
+      "images": [
+        "assets/images/products/samsung-Z-Flip-7-Blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "CoralRed",
+      "images": [
+        "assets/images/products/samsung-Z-Flip-7-CoralRed.jpg"
+        
+      ]
+    },
+    
+    {
+      "name": "Mint",
+      "images": [
+        "assets/images/products/samsung-Z-Flip-7-Mint.jpg"
+       
+      ]
+    },
+    {
+      "name": "Dark Blue",
+      "images": [
+        "assets/images/products/samsung-Z-Flip-7-Blue.jpg"
+       
+      ]
+    }
+    
+  ],
+  "variants": [
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 115788,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 131182,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "CoralRed",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "Samsung Exynos 2500",
+    "Front Camera": "10 MP",
+    "Back Camera": "50 MP + 12 MP",
+    "Battery": "4300 mAh",
+    "Display": "FHD + Dynamic AMOLED 2X",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

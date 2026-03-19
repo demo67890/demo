@@ -1,0 +1,76 @@
+{
+  "id": "samsung-s25",
+  "name": "Samsung S25",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-S25-pinkgold.jpg",
+  "colors": [
+    {
+      "name": "Icy Blue",
+      "images": [
+        "assets/images/products/samsung-S25-icyBlue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Mint",
+      "images": [
+        "assets/images/products/samsung-S25-Mint.jpg"
+       
+      ]
+    },
+    {
+      "name": "Navy",
+      "images": [
+        "assets/images/products/samsung-S25-Navy.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pinkgold",
+      "images": [
+        "assets/images/products/samsung-S25-pinkgold.jpg"
+       
+      ]
+    },
+    {
+      "name": "Silver Shadow",
+      "images": [
+        "assets/images/products/samsung-S25-silverShadow.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-12",
+      "ram": "12 GB",
+      "storage": "128 GB",
+      "price": 78946,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 87096,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pinkgold",
+    "variant": "128-12"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 8 Elite",
+    "Front Camera": "12 MP",
+    "Back Camera": "50 MP + 12 MP + 10 MP",
+    "Battery": "4000 mAh",
+    "Display": "QHD + Dynamic AMOLED 2X",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

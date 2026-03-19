@@ -1,0 +1,62 @@
+{
+  "id": "google-pixel-10A",
+  "name": "Google Pixel 10A",
+  "brand": "Pixel",
+  "category": "Pixel",
+  "image": "assets/images/products/Google-Pixel-10a-Lavender.jpg",
+  "colors": [
+    {
+      "name": "Berry",
+      "images": [
+        "assets/images/products/Google-Pixel-10a-Berry.jpg"
+        
+      ]
+    },
+    {
+      "name": "Fog",
+      "images": [
+        "assets/images/products/Google-Pixel-10a-Fog.jpg"
+       
+      ]
+    },
+    {
+      "name": "Lavender",
+      "images": [
+        "assets/images/products/Google-Pixel-10a-Lavender.jpg"
+       
+      ]
+    },
+    {
+      "name": "Obsidian",
+      "images": [
+        "assets/images/products/Google-Pixel-10a-Obsidian.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 52631,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Lavender",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Google Tenser G4",
+    "Front Camera": "13 MP",
+    "Back Camera": "48 MP + 13 MP",
+    "Battery": "5100 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

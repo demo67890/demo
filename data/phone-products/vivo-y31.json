@@ -1,0 +1,57 @@
+{
+  "id": "vivo-y31",
+  "name": "Vivo Y31",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-y31-Red.jpg",
+  "colors": [
+    {
+      "name": "Rose Red",
+      "images": [
+        "assets/images/products/vivo-y31-Red.jpg"
+        
+      ]
+    },
+    {
+      "name": "Diamond Green",
+      "images": [
+        "assets/images/products/vivo-y31-green.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 18084,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 20329,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Rose Red",
+    "variant": "128-4"
+  },
+  "specs": {
+    "Processor": "Snapdragon 4 Gen 2 ",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP + 0.8 MP",
+    "Battery": "5000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

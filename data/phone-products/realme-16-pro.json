@@ -1,0 +1,70 @@
+{
+  "id": "realme-16-pro",
+  "name": "Realme 16 Pro",
+  "brand": "Realme",
+  "category": "Realme",
+  "image": "assets/images/products/realme-16-pro-purple.jpg",
+  "colors": [
+    {
+      "name": "Master Gold",
+      "images": [
+        "assets/images/products/realme-16-pro-gold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Orchid Purple",
+      "images": [
+        "assets/images/products/realme-16-pro-purple.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pebble Grey",
+      "images": [
+        "assets/images/products/realme-16-pro-grey.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 36457,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 39784,
+      "discount": 7,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 43955,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Orchid Purple",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7300 MAX",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 8 MP",
+    "Battery": "7000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

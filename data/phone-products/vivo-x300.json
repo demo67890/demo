@@ -1,0 +1,64 @@
+{
+  "id": "vivo-x300",
+  "name": "Vivo X300",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-x300-blue.jpg",
+  "colors": [
+    {
+      "name": "Elite Black",
+      "images": [
+        "assets/images/products/vivo-x300-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Mist Blue",
+      "images": [
+        "assets/images/products/vivo-x300-blue.jpg"
+        
+      ]
+    },
+    
+    {
+      "name": "Summit Red",
+      "images": [
+        "assets/images/products/vivo-x300-Red.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 79999,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "512-16",
+      "ram": "16 GB",
+      "storage": "512 GB",
+      "price": 92472,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Mist Blue",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 9500",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 50 MP + 50 MP",
+    "Battery": "6400 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

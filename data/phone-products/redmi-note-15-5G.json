@@ -1,0 +1,64 @@
+{
+  "id": "redmi-note-15-5G",
+  "name": "Redmi Note 15 5G",
+  "brand": "Redmi",
+  "category": "Redmi",
+  "image": "assets/images/products/redmi-note-15-blue.jpg",
+  "colors": [
+    
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/redmi-note-15-black.jpg"
+       
+      ]
+    },
+    {
+      "name": "Glacier Blue",
+      "images": [
+        "assets/images/products/redmi-note-15-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Mist Purple",
+      "images": [
+        "assets/images/products/redmi-note-15-purple.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 23957,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 27173,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Glacier Blue",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 6 Gen 3",
+    "Front Camera": "20 MP",
+    "Back Camera": "108 MP + 8 MP",
+    "Battery": "6000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

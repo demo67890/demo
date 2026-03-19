@@ -1,0 +1,70 @@
+{
+  "id": "iphone-17-pro",
+  "name": "iPhone 17 Pro",
+  "brand": "Apple",
+  "category": "iPhone",
+  "image": "assets/images/products/iphone-17pro-orange.jpg",
+  "colors": [
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/products/iphone-17pro-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Cosmic Orange",
+      "images": [
+        "assets/images/products/iphone-17pro-orange.jpg"
+       
+      ]
+    },
+    {
+      "name": "Deep Blue",
+      "images": [
+        "assets/images/products/iphone-17pro-deepblue.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 139072,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "512-8",
+      "ram": "8 GB",
+      "storage": "512 GB",
+      "price": 163053,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "1 TB -8",
+      "ram": "8 GB",
+      "storage": "1 TB",
+      "price": 188065,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Cosmic Orange",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "A19 PRO",
+    "Front Camera": "18 MP",
+    "Back Camera": "48 MP",
+    "Battery": "4252 mAh",
+    "Display": "XDR OLED",
+    "OS": "iOS 26",
+    "EMI Available": "UPTO 24 MONTH'S"
+  },
+  "status": "active"
+}

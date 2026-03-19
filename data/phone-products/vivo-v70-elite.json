@@ -1,0 +1,71 @@
+{
+  "id": "vivo-v70-elite",
+  "name": "Vivo V70 Elite",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-v70-Elite-passionRed.jpg",
+  "colors": [
+    {
+      "name": "Authentic Black",
+      "images": [
+        "assets/images/products/vivo-v70-Elite-Black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Sand Beige",
+      "images": [
+        "assets/images/products/vivo-v70-Elite-SandBeige.jpg"
+        
+      ]
+    },
+    
+    {
+      "name": "Passion Red",
+      "images": [
+        "assets/images/products/vivo-v70-Elite-passionRed.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 53885,
+      "discount": 3.5,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 59999,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 66523,
+      "discount": 6.8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Passion Red",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 8s Gen 3",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP + 50 MP + 8 MP",
+    "Battery": "6500 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

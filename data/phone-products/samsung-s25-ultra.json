@@ -1,0 +1,91 @@
+{
+  "id": "samsung-s25-ultra",
+  "name": "Samsung S25 Ultra",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-S25-Ultra-TitaniumWhiteSilver.jpg",
+  "colors": [
+    {
+      "name": "Titanium Black",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumBlack.jpg"
+        
+      ]
+    },
+    {
+      "name": "Titanium White Silver",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumWhiteSilver.jpg"
+       
+      ]
+    },
+    {
+      "name": "Titanium Gray",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumGray.jpg"
+       
+      ]
+    },
+    {
+      "name": "Titanium Jadegreen",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumJadegreen.jpg"
+       
+      ]
+    },
+    {
+      "name": "Titanium Jetblack",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumZetBlack.jpg"
+       
+      ]
+    },
+    {
+      "name": "Titanium Pinkgold",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumPinkGold.jpg"
+       
+      ]
+    },
+    {
+      "name": "Titanium Silverblue",
+      "images": [
+        "assets/images/products/samsung-S25-Ultra-TitaniumSilverBlue.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 136841,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 152687,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Titanium White Silver",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 8 Elite",
+    "Front Camera": "12 MP",
+    "Back Camera": "200 MP + 50 MP + 50 MP + 10 MP",
+    "Battery": "5000 mAh",
+    "Display": "QHD + Dynamic AMOLED 2X",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "moto-edge-60-fusion",
+  "name": "Motorola Edge 60 Fusion",
+  "brand": "Motorola",
+  "category": "Motorola",
+  "image": "assets/images/products/moto-edge-60fusion-fantoneAmazonite.jpg",
+  "colors": [
+    {
+      "name": "Pantone Slipstream",
+      "images": [
+        "assets/images/products/moto-edge-60fusion-fantoneSlipstream.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Mykonos Blue",
+      "images": [
+        "assets/images/products/moto-edge-60fusion-fantoneMykonos.jpg.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pantone Zephyr",
+      "images": [
+        "assets/images/products/moto-edge-60fusion-fantoneZephyr.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pantone Amazonite",
+      "images": [
+        "assets/images/products/moto-edge-60fusion-fantoneAmazonite.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 27026,
+      "discount": 7.5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 24467,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 21874,
+      "discount": 4,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pantone Amazonite",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7400",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 13 MP",
+    "Battery": "5500 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

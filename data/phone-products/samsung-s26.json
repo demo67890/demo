@@ -1,0 +1,69 @@
+{
+  "id": "samsung-s26",
+  "name": "Samsung S26",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-S26-Black.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/samsung-S26-Black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Cobait Violet",
+      "images": [
+        "assets/images/products/samsung-S26-CobaltViolet.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pinkgold",
+      "images": [
+        "assets/images/products/samsung-S26-PinkGold.jpg"
+       
+      ]
+    },
+    {
+      "name": "White",
+      "images": [
+        "assets/images/products/samsung-S26-white.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 91666,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 114893,
+      "discount": 6,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Black",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "Samsung Exynos 2600",
+    "Front Camera": "12 MP",
+    "Back Camera": "50 MP + 12 MP + 10 MP",
+    "Battery": "4300 mAh",
+    "Display": "QHD + Dynamic AMOLED 2X",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -141,7 +141,8 @@ body {
 .btn-whatsapp,
 .category-box-card,
 .nav-btn,
-.new-launch-card {
+.new-launch-card,
+.store-locations-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -416,7 +417,9 @@ body {
 }
 
 .search-wrapper input::placeholder {
-    color: #94a3b8;
+    color: #334155;
+    font-weight: 500;
+    opacity: 1;
 }
 
 .search-submit {
@@ -537,7 +540,7 @@ body {
     color: #1e293b;
 }
 
-/* ===== SHOP BANNER ===== */
+/* ===== SHOP BANNER - KEPT FOR BACKWARD COMPATIBILITY ===== */
 .shop-banner {
     height: 160px;
     background: linear-gradient(105deg, #0f172a 0%, #1e293b 100%);
@@ -598,6 +601,149 @@ body {
 @media (min-width: 768px) {
     .banner-content p {
         font-size: 18px;
+    }
+}
+
+/* ===== STORE LOCATIONS SLIDER ===== */
+.store-locations-section {
+    margin: 25px 0 30px;
+}
+
+.store-locations-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.store-locations-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.store-locations-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.store-locations-card:active {
+    transform: scale(0.99);
+}
+
+.store-locations-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.store-map {
+    flex: 0 0 200px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.store-map iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+}
+
+.store-info {
+    flex: 1;
+    padding: 15px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.store-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.store-address {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Dots indicator for store locations */
+.store-locations-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.store-locations-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.store-locations-dot.active {
+    width: 24px;
+    background: #0f172a;
+    border-radius: 20px;
+}
+
+/* Responsive for store locations */
+@media (min-width: 768px) {
+    .store-locations-card {
+        height: 350px;
+    }
+    .store-map {
+        height: 220px;
+    }
+    .store-name {
+        font-size: 20px;
+    }
+    .store-address {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .store-locations-card {
+        height: 280px;
+    }
+    .store-map {
+        height: 170px;
+    }
+    .store-name {
+        font-size: 16px;
+    }
+    .store-address {
+        font-size: 12px;
     }
 }
 
@@ -747,6 +893,7 @@ body {
 .product-card,
 .trending-card,
 .new-launch-card,
+.store-locations-card,
 .product-detail,
 .feature-item {
     background: #ffffff;
@@ -760,7 +907,8 @@ body {
 .category-box-card:hover,
 .product-card:hover,
 .trending-card:hover,
-.new-launch-card:hover {
+.new-launch-card:hover,
+.store-locations-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
 }
@@ -1908,47 +2056,74 @@ body.product-details-page .detail-availability {
     font-weight: 500;
 }
 
-/* CTA Buttons */
+/* ===== MODERN CTA BUTTONS - FULL WIDTH ON MOBILE ===== */
 body.product-details-page .cta-buttons {
     display: flex;
-    gap: 14px;
-    margin: 15px 0 20px;
+    flex-direction: column;  /* Stack buttons vertically */
+    gap: 12px;               /* Space between buttons */
+    margin: 20px 0 15px;
+    width: 100%;              /* Full width container */
 }
 
 body.product-details-page .btn-call,
 body.product-details-page .btn-whatsapp {
-    flex: 1;
-    height: 52px;
+    width: 100%;              /* Full width buttons */
+    height: 56px;             /* 50-60px range */
+    padding: 0 20px;          /* Horizontal padding */
     border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 12px;      /* Rounded corners */
+    font-size: 18px;          /* Slightly larger text */
+    font-weight: 700;         /* Bold text */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 10px;                /* Space between icon and text */
     text-decoration: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.25s;
-    will-change: transform;
-    transform: translateZ(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;    /* Slight letter spacing for better look */
 }
 
+/* Call button - Dark theme */
 body.product-details-page .btn-call {
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
 }
 
+/* WhatsApp button - Green theme */
 body.product-details-page .btn-whatsapp {
     background: linear-gradient(135deg, #25D366, #128C7E);
     color: white;
 }
 
+/* Hover effects */
+body.product-details-page .btn-call:hover,
+body.product-details-page .btn-whatsapp:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
 body.product-details-page .btn-call:active,
 body.product-details-page .btn-whatsapp:active {
-    transform: scale(0.96);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Icon styling */
+body.product-details-page .btn-call i,
+body.product-details-page .btn-whatsapp i {
+    font-size: 20px;          /* Icons slightly larger */
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+    body.product-details-page .btn-call,
+    body.product-details-page .btn-whatsapp {
+        height: 52px;          /* Slightly smaller on very small screens */
+        font-size: 16px;
+        border-radius: 10px;
+    }
 }
 
 /* Compare checkbox */
@@ -2357,7 +2532,7 @@ body.product-details-page .spec-value {
     box-shadow: 0 12px 30px rgba(0,0,0,0.05);
     overflow: hidden;
     background: white;
-    padding: px;
+    padding: 8px;
 }
 
 .map-grid {
@@ -2618,6 +2793,20 @@ footer {
         padding: 4px 10px;
         font-size: 10px;
     }
+    
+    /* Store locations mobile */
+    .store-locations-card {
+        height: 280px;
+    }
+    .store-map {
+        height: 170px;
+    }
+    .store-name {
+        font-size: 16px;
+    }
+    .store-address {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2679,6 +2868,14 @@ footer {
     .product-card img {
         height: 130px;
     }
+    
+    /* Store locations small mobile */
+    .store-locations-card {
+        height: 270px;
+    }
+    .store-map {
+        height: 160px;
+    }
 }
 
 /* Very small devices */
@@ -2724,6 +2921,17 @@ footer {
     .product-price {
         font-size: 14px;
     }
+    
+    /* Store locations very small */
+    .store-locations-card {
+        height: 260px;
+    }
+    .store-map {
+        height: 155px;
+    }
+    .store-name {
+        font-size: 15px;
+    }
 }
 
 /* Touch optimization */
@@ -2733,7 +2941,8 @@ footer {
     .compare-btn,
     .clear-all-btn,
     body.product-details-page .color-box,
-    body.product-details-page .variant-box {
+    body.product-details-page .variant-box,
+    .store-locations-card {
         cursor: default;
         -webkit-tap-highlight-color: transparent;
     }
@@ -2745,7 +2954,8 @@ footer {
     .compare-btn:active,
     .clear-all-btn:active,
     body.product-details-page .color-box:active,
-    body.product-details-page .variant-box:active {
+    body.product-details-page .variant-box:active,
+    .store-locations-card:active {
         opacity: 0.8;
     }
 }
@@ -2797,6 +3007,20 @@ footer {
     .product-card {
         height: 320px;
     }
+    
+    /* Store locations desktop */
+    .store-locations-card {
+        height: 350px;
+    }
+    .store-map {
+        height: 220px;
+    }
+    .store-name {
+        font-size: 20px;
+    }
+    .store-address {
+        font-size: 15px;
+    }
 }
 
 /* Tablet Styles */
@@ -2818,6 +3042,11 @@ footer {
     
     .product-card {
         height: 300px;
+    }
+    
+    /* Store locations tablet */
+    .store-locations-card {
+        height: 320px;
     }
 }
 
@@ -2845,6 +3074,17 @@ footer {
         color: #0f172a;
         border-color: #10b493;
     }
+    
+    /* Store locations dark mode */
+    .store-locations-card {
+        background: white !important;
+    }
+    .store-name {
+        color: #0f172a !important;
+    }
+    .store-address {
+        color: #475569 !important;
+    }
 }
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
@@ -2853,6 +3093,7 @@ footer {
     .category-btn:hover,
     .trending-card:hover,
     .new-launch-card:hover,
+    .store-locations-card:hover,
     body.product-details-page .color-box:hover,
     body.product-details-page .variant-box:hover {
         transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,0 +1,48 @@
+{
+  "id": "moto-edge-70",
+  "name": "Motorola Edge 70",
+  "brand": "Motorola",
+  "category": "Motorola",
+  "image": "assets/images/products/moto-edge-70-LilyPad.jpg",
+  "colors": [
+    {
+      "name": "Gadget Gray",
+      "images": [
+        "assets/images/products/moto-edge-70-Gadget-grey.jpg"
+        
+      ]
+    },
+    {
+      "name": "Lily Pad",
+      "images": [
+        "assets/images/products/moto-edge-70-LilyPad.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 32257,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Lily Pad",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 7 Gen 4",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP + 50 MP",
+    "Battery": "4800 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

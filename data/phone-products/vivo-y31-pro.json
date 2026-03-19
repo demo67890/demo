@@ -1,0 +1,57 @@
+{
+  "id": "vivo-y31-pro",
+  "name": "Vivo Y31 Pro",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-y31-pro-white.jpg",
+  "colors": [
+    {
+      "name": "Mocha Brown",
+      "images": [
+        "assets/images/products/vivo-y31-pro-Brown.jpg"
+        
+      ]
+    },
+    {
+      "name": "Dreamy White",
+      "images": [
+        "assets/images/products/vivo-y31-pro-white.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 21052,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 23655,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Dreamy White",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Dimensity 7300",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "6500 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

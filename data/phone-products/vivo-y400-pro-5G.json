@@ -1,0 +1,64 @@
+{
+  "id": "vivo-y400-pro-5G",
+  "name": "Vivo Y400 Pro 5G",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-y400-pro-purple.jpg",
+  "colors": [
+    {
+      "name": "Freestyle White",
+      "images": [
+        "assets/images/products/vivo-y400-pro-white.jpg"
+        
+      ]
+    },
+    {
+      "name": "Fest Gold",
+      "images": [
+        "assets/images/products/vivo-y400-pro-Gold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Nebula Purple",
+      "images": [
+        "assets/images/products/vivo-y400-pro-purple.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 27659,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 30434,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Nebula Purple",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7300",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "5500 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

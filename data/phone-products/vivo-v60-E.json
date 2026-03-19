@@ -1,0 +1,64 @@
+{
+  "id": "vivo-v60-E",
+  "name": "Vivo V60 E",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-v60e-gold.jpg",
+  "colors": [
+    {
+      "name": "Elite Purple",
+      "images": [
+        "assets/images/products/vivo-v60e-purple.jpg"
+        
+      ]
+    },
+    
+    {
+      "name": "Noble Gold",
+      "images": [
+        "assets/images/products/vivo-v60e-gold.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 32989,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 35788,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 38709,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Noble Gold",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7360-Turbo",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 8 MP",
+    "Battery": "6500 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

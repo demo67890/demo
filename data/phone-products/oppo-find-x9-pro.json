@@ -1,0 +1,48 @@
+{
+  "id": "oppo-find-x9-pro",
+  "name": "Oppo Find X9 Pro",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-find-x9-pro-white.jpg",
+  "colors": [
+    {
+      "name": "Silk White",
+      "images": [
+        "assets/images/products/oppo-find-x9-pro-white.jpg"
+        
+      ]
+    },
+   
+    {
+      "name": "Titanium Charcoal",
+      "images": [
+        "assets/images/products/oppo-find-x9-pro-charcoal.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+  
+    {
+      "id": "512-16",
+      "ram": "16 GB",
+      "storage": "512 GB",
+      "price": 120878,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Silk White",
+    "variant": "512-16"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 9500",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 50 MP + 50 MP +  2 MP",
+    "Battery": "7500 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

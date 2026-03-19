@@ -1,0 +1,77 @@
+{
+  "id": "nothing-phone-4A",
+  "name": "Nothing Phone 4A",
+  "brand": "Nothing",
+  "category": "Nothing",
+  "image": "assets/images/products/Nothing-Phone-4A-blue.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/Nothing-Phone-4A-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Blue",
+      "images": [
+        "assets/images/products/Nothing-Phone-4A-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "White",
+      "images": [
+        "assets/images/products/Nothing-Phone-4A-white.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pink",
+      "images": [
+        "assets/images/products/Nothing-Phone-4A-pink.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 32989,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 36841,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 40859,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Blue",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 7S Gen 4",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 50 MP + 8 MP",
+    "Battery": "5400 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

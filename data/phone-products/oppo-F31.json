@@ -1,0 +1,63 @@
+{
+  "id": "oppo-F31",
+  "name": "Oppo F31",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-F31-Red.jpg",
+  "colors": [
+    {
+      "name": "Bloom Red",
+      "images": [
+        "assets/images/products/oppo-F31-Red.jpg"
+        
+      ]
+    },
+    {
+      "name": "Midnight Blue",
+      "images": [
+        "assets/images/products/oppo-F31-blue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Cloud Green",
+      "images": [
+        "assets/images/products/oppo-F31-green.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 28420,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 31182,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Bloom Red",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 6300",
+    "Front Camera": "16 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "7000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

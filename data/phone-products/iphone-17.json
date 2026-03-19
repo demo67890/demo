@@ -1,0 +1,76 @@
+{
+  "id": "iphone-17",
+  "name": "iPhone 17",
+  "brand": "Apple",
+  "category": "iPhone",
+  "image": "assets/images/products/iphone-17-lavender.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/iphone-17-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "White",
+      "images": [
+        "assets/images/products/iphone-17-white.jpg"
+       
+      ]
+    },
+    {
+      "name": "Mist Blue",
+      "images": [
+        "assets/images/products/iphone-17-mistblue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Lavender",
+      "images": [
+        "assets/images/products/iphone-17-lavender.jpg"
+       
+      ]
+    },
+    {
+      "name": "Sage",
+      "images": [
+        "assets/images/products/iphone-17-sage.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 88191,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "512-8",
+      "ram": "8 GB",
+      "storage": "512 GB",
+      "price": 111243,
+      "discount": 7.5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Lavender",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "A19",
+    "Front Camera": "18 MP",
+    "Back Camera": "48 MP",
+    "Battery": "3692 mAh",
+    "Display": "XDR OLED",
+    "OS": "iOS 26",
+    "EMI Available": "UPTO 24 MONTH'S"
+  },
+  "status": "active"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "moto-edge-60",
+  "name": "Motorola Edge 60",
+  "brand": "Motorola",
+  "category": "Motorola",
+  "image": "assets/images/products/Moto-edge-60-PantoneShamrock.jpg",
+  "colors": [
+    {
+      "name": "Pantone Gibraltar Sea",
+      "images": [
+        "assets/images/products/moto-edge-60-Pantone-GibraltarSea.jpg.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Shamrock",
+      "images": [
+        "assets/images/products/Moto-edge-60-PantoneShamrock.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 27026,
+      "discount": 7.5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pantone Shamrock",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7400",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP + 50 MP + 10 MP",
+    "Battery": "5200 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

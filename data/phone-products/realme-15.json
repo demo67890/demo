@@ -1,0 +1,70 @@
+{
+  "id": "realme-15",
+  "name": "Realme 15",
+  "brand": "Realme",
+  "category": "Realme",
+  "image": "assets/images/products/realme-15-pink.jpg",
+  "colors": [
+    {
+      "name": "Flowing Silver",
+      "images": [
+        "assets/images/products/realme-15-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silk Pink",
+      "images": [
+        "assets/images/products/realme-15-pink.jpg"
+       
+      ]
+    },
+    {
+      "name": "Velvet Green",
+      "images": [
+        "assets/images/products/realme-15-green.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 30525,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 33332,
+      "discount": 7,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 36263,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Silk Pink",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Dimensity 7300+",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP + 8 MP",
+    "Battery": "7000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

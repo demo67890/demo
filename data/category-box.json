@@ -7,27 +7,9 @@
             "icon": "📱",
             "color": "#3b82f6"
         },
-        {
-            "name": "Smart TVs",
-            "image": "assets/images/categories/tvs.png",
-            "page": "tv.html",
-            "icon": "📺",
-            "color": "#ef4444"
-        },
-        {
-            "name": "ACs",
-            "image": "assets/images/categories/acs.png",
-            "page": "ac.html",
-            "icon": "❄️",
-            "color": "#06b6d4"
-        },
-        {
-            "name": "Earphones",
-            "image": "assets/images/categories/earphones.png",
-            "page": "earphones.html",
-            "icon": "🎧",
-            "color": "#8b5cf6"
-        },
+        
+        
+        
         {
             "name": "Smart Watches",
             "image": "assets/images/categories/watches.png",
@@ -48,13 +30,6 @@
             "page": "tablets.html",
             "icon": "📟",
             "color": "#f97316"
-        },
-        {
-            "name": "Accessories",
-            "image": "assets/images/categories/accessories.png",
-            "page": "accessories.html",
-            "icon": "🔌",
-            "color": "#64748b"
         }
     ]
 }

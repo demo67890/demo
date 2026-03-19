@@ -1,0 +1,70 @@
+{
+  "id": "iphone-17-pro-max",
+  "name": "iPhone 17 Pro Max",
+  "brand": "Apple",
+  "category": "iPhone",
+  "image": "assets/images/products/iphone-17promax-deepblue.jpg",
+  "colors": [
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/products/iphone-17promax-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Cosmic Orange",
+      "images": [
+        "assets/images/products/iphone-17promax-orange.jpg"
+       
+      ]
+    },
+    {
+      "name": "Deep Blue",
+      "images": [
+        "assets/images/products/iphone-17promax-deepblue.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 154536,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "512-8",
+      "ram": "8 GB",
+      "storage": "512 GB",
+      "price": 178842,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "1 TB -8",
+      "ram": "8 GB",
+      "storage": "1 TB",
+      "price": 204194,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Deep Blue",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "A19 PRO",
+    "Front Camera": "18 MP",
+    "Back Camera": "48 MP",
+    "Battery": "5000 mAh",
+    "Display": "XDR OLED",
+    "OS": "iOS 26",
+    "EMI Available": "UPTO 24 MONTH'S"
+  },
+  "status": "active"
+}

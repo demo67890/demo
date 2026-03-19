@@ -6,6 +6,73 @@
     <title>Product Details - Banashree Mobile</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Copyright section styling - with !important to override */
+        .copyright {
+            text-align: center !important;
+            padding: 20px 0 10px !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-size: 14px !important;
+            line-height: 1.8 !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            margin-top: 20px !important;
+            display: block !important;
+        }
+
+        .copyright br {
+            display: block !important;
+        }
+
+        .copyright .heart {
+            display: inline-block !important;
+            color: #ff4d4d !important;
+            font-size: 16px !important;
+            animation: heartbeat 1.5s ease-in-out infinite !important;
+            margin: 0 2px !important;
+        }
+
+        .copyright .developer-name {
+            color: #61dac2 !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.3px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .copyright .developer-name:hover {
+            color: #4ec9b0 !important;
+            text-shadow: 0 0 10px rgba(97, 218, 194, 0.5) !important;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            35% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.08);
+            }
+            55% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .copyright {
+                font-size: 12px !important;
+                padding: 15px 0 5px !important;
+            }
+            .copyright .heart {
+                font-size: 14px !important;
+            }
+        }
+    </style>
 </head>
 <!-- ⭐ IMPORTANT: Added class for product details page -->
 <body class="product-details-page">
@@ -15,7 +82,7 @@
             <div class="container">
                 <span class="shop-name">Banashree Mobile</span>
                 <span class="separator">|</span>
-                <span class="shop-address">Main Road, Malkangiri</span>
+                <span class="shop-address">Jaydev vihar, Bhubaneswar , 753013</span>
             </div>
         </div>
         
@@ -92,27 +159,34 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">All Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
+                    <p>Call Now 🤙 </p>
                     <p>📞 +91 9777966677 </p>
                     <p>📞 +91 9583000060 </p>
                     <p>📞 +91 9776666877 </p>
                     <p>📞 +91 9583000030 </p>
-                    <p>📧 banashreemobiles@gmail.com</p>
+                    <p>Message Now 🗨️ </p>
+                    <p>💬 +91 9777966677 </p>
+                    <p>banashreemobiles@gmail.com</p>
                 </div>
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-                        <a href="#">📘</a>
-                        <a href="#">📷</a>
-                        <a href="#">🐦</a>
+                        <a href="https://youtube.com/@banashree_mobile?si=lWjVxz-QcIJL7MuC" target="_blank" rel="noopener noreferrer" style="color: #FF0000; font-size: 24px; text-decoration: none; transition: transform 0.2s;">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+            
+            <!-- सीधा सा copyright section - कोई extra div नहीं -->
             <div class="copyright">
-                © 2026 Banashree Mobile. All rights reserved.
+                © 2026 Banashree Mobile. All rights reserved.<br>
+                Developed with <span class="heart">❤️</span> by <strong class="developer-name">Subhankar Bairagi</strong>
             </div>
         </div>
     </footer>

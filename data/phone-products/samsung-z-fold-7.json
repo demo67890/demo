@@ -1,0 +1,69 @@
+{
+  "id": "samsung-z-fold-7",
+  "name": "Samsung Z Fold 7",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung -Z-Fold-7-Black.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/samsung -Z-Fold-7-Black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silver Shadow",
+      "images": [
+        "assets/images/products/samsung -Z-Fold-7-silverShadow.jpg"
+       
+      ]
+    },
+    {
+      "name": "Dark Blue",
+      "images": [
+        "assets/images/products/samsung -Z-Fold-7-DarkBlue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Mint",
+      "images": [
+        "assets/images/products/samsung -Z-Fold-7-Mint.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 186169,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 205493,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Black",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 8 Elite",
+    "Front Camera": "10 MP + 10 MP",
+    "Back Camera": "200 MP + 12 MP + 10 MP",
+    "Battery": "4400 mAh",
+    "Display": "QXGA + Dynamic AMOLED 2X",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

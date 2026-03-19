@@ -3,20 +3,27 @@
   "name": "iPhone 15",
   "brand": "Apple",
   "category": "iPhone",
-  "image": "assets/images/products/iphone-15.jpg",
+  "image": "assets/images/products/iphone-15-black.jpg",
   "colors": [
     {
       "name": "Black",
       "images": [
-        "assets/images/products/iphone-15-black.jpg",
-        "assets/images/products/iphone-15-black-back.jpg"
+        "assets/images/products/iphone-15-black.jpg"
+        
       ]
     },
     {
       "name": "Blue",
       "images": [
-        "assets/images/products/iphone-15-blue.jpg",
-        "assets/images/products/iphone-15-blue-back.jpg"
+        "assets/images/products/iphone-15-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pink",
+      "images": [
+        "assets/images/products/iphone-15-pink.jpg"
+        
       ]
     }
   ],
@@ -25,15 +32,15 @@
       "id": "128-6",
       "ram": "6 GB",
       "storage": "128 GB",
-      "price": 79900,
-      "discount": 1.5,
+      "price": 56598,
+      "discount": 3,
       "available": true
     },
     {
-      "id": "256-8",
-      "ram": "8 GB",
+      "id": "256-6",
+      "ram": "6 GB",
       "storage": "256 GB",
-      "price": 89900,
+      "price": 68316,
       "discount": 5,
       "available": true
     }
@@ -44,11 +51,12 @@
   },
   "specs": {
     "Processor": "A16 Bionic",
-    "Camera": "48 MP + 12 MP",
+    "Front Camera": "12 MP",
+    "Back Camera": "48 MP",
     "Battery": "3349 mAh",
-    "Display": "6.1 inch Super Retina XDR",
-    "Operating System": "iOS 17",
-    "Weight": "171 g"
+    "Display": "XDR OLED",
+    "OS": "iOS 26",
+    "EMI Available": "UPTO 24 MONTH'S"
   },
   "status": "active"
 }

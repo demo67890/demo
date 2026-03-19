@@ -1,0 +1,62 @@
+{
+  "id": "nothing-phone-3A-lite",
+  "name": "Nothing Phone 3A Lite",
+  "brand": "Nothing",
+  "category": "Nothing",
+  "image": "assets/images/products/Nothing-Phone-3A-lite-black.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/Nothing-Phone-3A-lite-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Blue",
+      "images": [
+        "assets/images/products/Nothing-Phone-3A-lite-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "White",
+      "images": [
+        "assets/images/products/Nothing-Phone-3A-lite-White.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 23157,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 25805,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Black",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7300 Pro",
+    "Front Camera": "16 MP",
+    "Back Camera": "50 MP + 8 MP + 2 MP",
+    "Battery": "5000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -43,7 +43,7 @@ const DataLoader = {
             return await response.json();
         } catch (error) {
             console.error('Error loading pagination:', error);
-            return { cardsPerPage: 40 };
+            return { cardsPerPage: 20 };
         }
     },
     
@@ -51,40 +51,117 @@ const DataLoader = {
     async loadPhoneProductIds() {
         return [
             // Mobiles
+            
+            'iphone-17',
+            'iphone-17-pro',
+            
+            'samsung-A17-5G',
+            
+            
+            'samsung-z-flip-7',
+            'samsung-z-fold-7',
+            'google-pixel-9A',
+            "vivo-y31-pro",
+            'google-pixel-10',
+            
+            'samsung-s25-ultra',
             'iphone-15',
-            'samsung-s23',
-            'vivo-v30',
-            'oppo-reno12-5g',
-            'redmi-13-5g',
-            'nothing-phone-2',
-            'oneplus-nord-15r',
-            'google-pixel-8',
-            'vivo-v29',
-            'samsung-a54',
-            'realme-12-pro'
+           
+            'samsung-A07-5G',
+            
+            
+            'redmi-note-15-pro-plus',
+            
+            'realme-15',
+            'redmi-15-c-5G',
+           
+            'google-pixel-10-pro-xl',
+            'iphone-16',
+            'iphone-16-plus',
+            
+            
+            
+            'moto-edge-70',
+            'moto-G57',
+            'oppo-reno-15-pro-mini',
+            'samsung-s25-FE',
+            'samsung-s26',
+            "vivo-y31",
+            'samsung-s26-ultra',
+            
+            'oppo-reno-15c-5G',
+            'moto-edge-60',
+            
+           
+            'realme-15-t-5G',
+            'oppo-find-x9-pro',
+            'oppo-reno-15-5G',
+            
+            
+            'samsung-s26-plus',
+            'realme-c83-5G',
+            'realme-c85',
+            'redmi-15-5G',
+            'moto-edge-60-pro',
+            "vivo-y19s-5G",
+            'redmi-note-15-5G',
+            'redmi-note-15-pro',
+            'vivo-v60-E',
+            
+            'realme-16-pro-plus',
+           
+           
+            'moto-G96',
+            'moto-signature',
+            'moto-edge-60-fusion',
+            
+            'oppo-A6-5G',
+            
+            'vivo-y400-pro-5G',
+            'nothing-phone-3A-lite',
+            'realme-15-x',
+            'realme-16-pro',
+            
+            
+            
+            
+            'oppo-F31',
+            
+            'oppo-find-x9',
+            
+            'nothing-phone-4A',
+            'samsung-s25',
+            'oppo-A6-pro',
+            'oppo-A6x-5G',
+            
+            'oppo-reno-15-pro-5G',
+            'vivo-v70-elite',
+            'vivo-y400-5G',
+            'google-pixel-10A',
+            'google-pixel-10-pro',
+            'iphone-air',
+            
+            'samsung-A36',
+            'samsung-A56',
+            'iphone-17-pro-max',
+            'vivo-v70',
+            'vivo-x300',
+            'oppo-F31-pro',
+            'oppo-F31-pro-plus',
+            'nothing-phone-4A-pro'
+            
+
+
+            
+
+
+
         ];
     },
     
     // ===== OTHER PRODUCTS IDs (products folder) =====
     async loadOtherProductIds() {
         return [
-            // TVs
-            'samsung-tv-55',
-            'lg-tv-43',
-            'sony-tv-65',
-            'mi-tv-5x',
-            
-            // ACs
-            'lg-ac-1.5ton',
-            'samsung-ac-2ton',
-            'voltas-ac-1ton',
-            'daikin-ac-1.5ton',
-            
-            // Earphones
-            'boat-earphones-131',
-            'jbl-earphones-100',
-            'sony-earphones-500',
-            'realme-earphones-air',
             
             // Watches
             'apple-watch-9',
@@ -101,13 +178,8 @@ const DataLoader = {
             // Tablets
             'apple-ipad-10',
             'samsung-tab-s9',
-            'lenovo-tab-p12',
+            'lenovo-tab-p12'
             
-            // Accessories
-            'charger-20w',
-            'powerbank-20000',
-            'cable-type-c',
-            'cover-iphone-15'
         ];
     },
     

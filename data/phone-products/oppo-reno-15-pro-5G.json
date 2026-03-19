@@ -1,0 +1,57 @@
+{
+  "id": "oppo-reno-15-pro-5G",
+  "name": "Oppo Reno 15 Pro 5G",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-reno-15-pro-brown.jpg",
+  "colors": [
+    {
+      "name": "Cocoa Brown",
+      "images": [
+        "assets/images/products/oppo-reno-15-pro-brown.jpg"
+        
+      ]
+    },
+   
+    {
+      "name": "Sunset Gold",
+      "images": [
+        "assets/images/products/oppo-reno-15-pro-gold.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+  
+   
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 71578,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 79347,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Cocoa Brown",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 8450",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 50 MP +  50 MP",
+    "Battery": "6500 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

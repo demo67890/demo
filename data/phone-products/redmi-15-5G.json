@@ -1,0 +1,70 @@
+{
+  "id": "redmi-15-5G",
+  "name": "Redmi 15 5G",
+  "brand": "Redmi",
+  "category": "Redmi",
+  "image": "assets/images/products/redmi-15-black.jpg",
+  "colors": [
+    {
+      "name": "Frosted White",
+      "images": [
+        "assets/images/products/redmi-15-white.jpg"
+        
+      ]
+    },
+    {
+      "name": "Midnight Black",
+      "images": [
+        "assets/images/products/redmi-15-black.jpg"
+       
+      ]
+    },
+    {
+      "name": "Sandy Purple",
+      "images": [
+        "assets/images/products/redmi-15-purple.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 17009,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 18946,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 20967,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Midnight Black",
+    "variant": "128-6"
+  },
+  "specs": {
+    "Processor": "Snapdragon 6s Gen 3",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

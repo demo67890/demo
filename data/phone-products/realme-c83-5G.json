@@ -1,0 +1,64 @@
+{
+  "id": "realme-c83-5G",
+  "name": "Realme C83 5G",
+  "brand": "Realme",
+  "category": "Realme",
+  "image": "assets/images/products/realme-c83-purple.jpg",
+  "colors": [
+    
+    {
+      "name": "Blooming Purple",
+      "images": [
+        "assets/images/products/realme-c83-purple.jpg"
+       
+      ]
+    },
+    {
+      "name": "Sproutin Green",
+      "images": [
+        "assets/images/products/realme-c83-green.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "64-4",
+      "ram": "4 GB",
+      "storage": "64 GB",
+      "price": 14061,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 15262,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 18816,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Blooming Purple",
+    "variant": "64-4"
+  },
+  "specs": {
+    "Processor": "Dimensity 6300",
+    "Front Camera": "5 MP",
+    "Back Camera": "13 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

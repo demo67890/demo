@@ -1,0 +1,70 @@
+{
+  "id": "samsung-A17-5G",
+  "name": "Samsung A17 5G",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-A17-5G-grey.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/samsung-A17-5G-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Gray",
+      "images": [
+        "assets/images/products/samsung-A17-5G-grey.jpg"
+       
+      ]
+    },
+    {
+      "name": "Blue",
+      "images": [
+        "assets/images/products/samsung-A17-5G-blue.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 21133,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 23683,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 28494,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Gray",
+    "variant": "128-6"
+  },
+  "specs": {
+    "Processor": "Exynos 1330 ",
+    "Front Camera": "13 MP",
+    "Back Camera": "50 MP + 5 MP + 2 MP",
+    "Battery": "5000 mAh",
+    "Display": "Super AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -5,10 +5,15 @@
  * AND PRODUCT DETAILS WITH COLOR + VARIANTS + PRICE
  * AND DISCOUNT ON PRODUCT CARDS + DYNAMIC RAM/STORAGE IN SPECS
  * AND FIXED TRENDING SECTION WITH DISCOUNT PRICE
- * AND AUTO-SCROLL FOR CATEGORIES WITH PAUSE ON TOUCH
+ * AND STORE LOCATIONS SLIDER
+ * AND TYPING ANIMATION FOR SEARCH PLACEHOLDER
+ * 🚫 AUTO-SCROLL REMOVED - Only manual scroll
  */
 
 document.addEventListener('DOMContentLoaded', async function() {
+    // Initialize typing animation for search (must come before initSearch)
+    initTypingPlaceholder();
+    
     // Initialize all features
     initSearch();
     initBottomNav();
@@ -22,6 +27,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (path.includes('product.html')) {
         await loadProductDetail();
     } else {
+        // Load store locations first (top section)
+        await loadStoreLocations();
         await loadCategories();
         await loadCategoryBoxes();
         await loadNewLaunchFeature();
@@ -31,18 +38,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         setTimeout(initCategoryBoxScroll, 500);
         
-        // ⭐ Initialize auto-scroll after everything is loaded
-        setTimeout(() => {
-            initCategoryAutoScroll();
-            initCategoryBoxAutoScroll();
-        }, 1000);
+        // ⭐ AUTO-SCROLL COMPLETELY REMOVED
+        // Categories will only move with user's hand
     }
 });
 
 // ===== GLOBAL VARIABLES =====
 let allProducts = [];
 let currentPage = 1;
-let cardsPerPage = 40;
+let cardsPerPage = 20;
 let currentFilter = 'All';
 let currentSort = 'default';
 let compareList = [];
@@ -54,6 +58,19 @@ let currentNewLaunchIndex = 0;
 let newLaunchInterval = null;
 let newLaunchTotalProducts = 0;
 
+// ===== STORE LOCATIONS SLIDER VARIABLES =====
+let storeLocations = [];
+let currentStoreIndex = 0;
+let storeInterval = null;
+let storeTotal = 0;
+
+// ===== TYPING ANIMATION VARIABLES =====
+let typingTimeout = null;
+let isTypingPaused = false;
+let typingCurrentIndex = 0;
+let typingCharIndex = 0;
+let isDeleting = false;
+
 // ===== COMPARE BOX STATE =====
 let isCompareExpanded = false;
 let isEditMode = false;
@@ -63,11 +80,7 @@ let currentProduct = null;
 let currentColorIndex = 0;
 let currentVariantIndex = 0;
 
-// ===== AUTO-SCROLL VARIABLES =====
-let categoryScrollInterval = null;
-let categoryBoxScrollInterval = null;
-let categoryResumeTimeout = null;
-let categoryBoxResumeTimeout = null;
+// ===== 🚫 AUTO-SCROLL VARIABLES REMOVED =====
 
 // ===== CATEGORY BOX DATA =====
 const categoryBoxData = [
@@ -78,23 +91,12 @@ const categoryBoxData = [
         icon: '📱'
     },
     {
-        name: 'Smart TVs',
-        image: 'assets/images/categories/tvs.png',
-        page: 'tv.html',
-        icon: '📺'
+        name: 'Tablets',
+        image: 'assets/images/categories/tablets.png',
+        page: 'tablets.html',
+        icon: '📟'
     },
-    {
-        name: 'ACs',
-        image: 'assets/images/categories/acs.png',
-        page: 'ac.html',
-        icon: '❄️'
-    },
-    {
-        name: 'Earphones',
-        image: 'assets/images/categories/earphones.png',
-        page: 'earphones.html',
-        icon: '🎧'
-    },
+    
     {
         name: 'Watches',
         image: 'assets/images/categories/watches.png',
@@ -106,20 +108,83 @@ const categoryBoxData = [
         image: 'assets/images/categories/laptops.png',
         page: 'laptops.html',
         icon: '💻'
-    },
-    {
-        name: 'Tablets',
-        image: 'assets/images/categories/tablets.png',
-        page: 'tablets.html',
-        icon: '📟'
-    },
-    {
-        name: 'Accessories',
-        image: 'assets/images/categories/accessories.png',
-        page: 'accessories.html',
-        icon: '🔌'
     }
+    
 ];
+
+// ===== TYPING ANIMATION FOR SEARCH PLACEHOLDER =====
+function initTypingPlaceholder() {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
+
+    // List of phone names to type
+    const phoneList = [
+        'iPhone',
+        'Samsung',
+        'Vivo',
+        'Oppo', 
+        'Redmi',
+        'Motorola',
+        'Nothing',
+        'Pixel',
+        'Realme'
+    ];
+
+    const staticText = 'Search phone '; // हमेशा दिखेगा
+
+    function typeEffect() {
+        if (isTypingPaused) return;
+
+        const currentPhone = phoneList[typingCurrentIndex];
+        
+        if (isDeleting) {
+            // Deleting text
+            typingCharIndex--;
+        } else {
+            // Typing text
+            typingCharIndex++;
+        }
+
+        // Update placeholder
+        searchInput.placeholder = staticText + currentPhone.substring(0, typingCharIndex);
+
+        // Check if typing complete
+        if (!isDeleting && typingCharIndex === currentPhone.length) {
+            // Pause at full word
+            isDeleting = true;
+            typingTimeout = setTimeout(typeEffect, 2000); // 2 second pause
+            return;
+        }
+
+        // Check if deletion complete
+        if (isDeleting && typingCharIndex === 0) {
+            isDeleting = false;
+            typingCurrentIndex = (typingCurrentIndex + 1) % phoneList.length;
+            typingTimeout = setTimeout(typeEffect, 200); // Short pause before next word
+            return;
+        }
+
+        // Speed of typing/deleting
+        const speed = isDeleting ? 50 : 100; // Deleting faster, typing slower
+        typingTimeout = setTimeout(typeEffect, speed);
+    }
+
+    // Pause on focus
+    searchInput.addEventListener('focus', function() {
+        isTypingPaused = true;
+        clearTimeout(typingTimeout);
+        // Keep current placeholder as is
+    });
+
+    // Resume on blur
+    searchInput.addEventListener('blur', function() {
+        isTypingPaused = false;
+        typeEffect();
+    });
+
+    // Start animation
+    typeEffect();
+}
 
 // ===== LOAD CATEGORY BOXES =====
 function loadCategoryBoxes() {
@@ -134,7 +199,7 @@ function loadCategoryBoxes() {
     `).join('');
 }
 
-// ===== CATEGORY BOX SCROLL FUNCTIONALITY =====
+// ===== CATEGORY BOX SCROLL FUNCTIONALITY (Manual Only) =====
 function initCategoryBoxScroll() {
     const container = document.getElementById('categoryBoxContainer');
     const prevBtn = document.getElementById('categoryBoxPrev');
@@ -165,94 +230,154 @@ function initCategoryBoxScroll() {
     setTimeout(updateButtons, 100);
 }
 
-// ===== FIXED: AUTO-SCROLL FOR CATEGORY CHIPS (All/Vivo/Oppo etc.) =====
-function initCategoryAutoScroll() {
-    const container = document.querySelector('.category-wrapper');
+// ===== 🚫 AUTO-SCROLL FUNCTIONS COMPLETELY REMOVED =====
+
+// ===== STORE LOCATIONS SLIDER =====
+async function loadStoreLocations() {
+    const container = document.getElementById('storeLocationsContainer');
     if (!container) return;
-    
-    let isPaused = false;
-    const scrollSpeed = 0.5;
-    
-    function startScroll() {
-        if (categoryScrollInterval) clearInterval(categoryScrollInterval);
+
+    container.innerHTML = '<div class="new-launch-loader"><div class="spinner"></div></div>';
+
+    try {
+        const response = await fetch('data/store-locations.json');
+        if (!response.ok) throw new Error('Failed to load store locations');
+        storeLocations = await response.json();
         
-        categoryScrollInterval = setInterval(() => {
-            if (!isPaused && container) {
-                container.scrollLeft += scrollSpeed;
-                
-                if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-                    container.scrollLeft = 0;
-                }
+        console.log('Store locations loaded:', storeLocations);
+        
+        if (!storeLocations || storeLocations.length === 0) {
+            container.innerHTML = '';
+            return;
+        }
+
+        storeTotal = storeLocations.length;
+        currentStoreIndex = 0;
+
+        const sliderHTML = `
+            <div class="store-locations-slider" id="storeLocationsSlider">
+                ${renderStoreCard(0)}
+            </div>
+            ${storeTotal > 1 ? '<div class="store-locations-dots" id="storeLocationsDots"></div>' : ''}
+        `;
+
+        container.innerHTML = sliderHTML;
+
+        if (storeTotal > 1) {
+            createStoreDots();
+            startStoreSlider();
+        }
+
+        // Click handler to open map
+        document.querySelector('.store-locations-card')?.addEventListener('click', function() {
+            const location = storeLocations[currentStoreIndex];
+            if (location && location.map) {
+                // Try to extract place ID or open Google Maps
+                const mapUrl = location.map.includes('embed') 
+                    ? location.map.replace('/embed?', '/maps?') 
+                    : location.map;
+                window.open(mapUrl, '_blank');
             }
-        }, 20);
+        });
+
+    } catch (error) {
+        console.error('Error loading store locations:', error);
+        container.innerHTML = '';
     }
-    
-    function pauseScroll() {
-        isPaused = true;
-        if (categoryResumeTimeout) clearTimeout(categoryResumeTimeout);
-    }
-    
-    function resumeScroll() {
-        if (categoryResumeTimeout) clearTimeout(categoryResumeTimeout);
-        categoryResumeTimeout = setTimeout(() => {
-            isPaused = false;
-        }, 2000); // 2 seconds ke baad resume
-    }
-    
-    // Touch events
-    container.addEventListener('touchstart', pauseScroll, { passive: true });
-    container.addEventListener('touchend', resumeScroll, { passive: true });
-    container.addEventListener('touchcancel', resumeScroll, { passive: true });
-    
-    // Mouse events for desktop
-    container.addEventListener('mouseenter', pauseScroll);
-    container.addEventListener('mouseleave', resumeScroll);
-    
-    startScroll();
 }
 
-// ===== FIXED: AUTO-SCROLL FOR CATEGORY BOXES (Phones/TV/AC etc.) =====
-function initCategoryBoxAutoScroll() {
-    const container = document.querySelector('.category-box-container');
-    if (!container) return;
-    
-    let isPaused = false;
-    const scrollSpeed = 0.7;
-    
-    function startScroll() {
-        if (categoryBoxScrollInterval) clearInterval(categoryBoxScrollInterval);
-        
-        categoryBoxScrollInterval = setInterval(() => {
-            if (!isPaused && container) {
-                container.scrollLeft += scrollSpeed;
-                
-                if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-                    container.scrollLeft = 0;
-                }
+function renderStoreCard(index) {
+    const location = storeLocations[index];
+    if (!location) return '';
+
+    return `
+        <div class="store-locations-card" data-index="${index}">
+            <div class="store-map">
+                <iframe src="${location.map}" 
+                        width="100%" 
+                        height="200" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="${location.name}">
+                </iframe>
+            </div>
+            <div class="store-info">
+                <h3 class="store-name">${location.name}</h3>
+                <p class="store-address">${location.address}</p>
+            </div>
+        </div>
+    `;
+}
+
+function createStoreDots() {
+    const dotsContainer = document.getElementById('storeLocationsDots');
+    if (!dotsContainer) return;
+
+    let dotsHTML = '';
+    for (let i = 0; i < storeTotal; i++) {
+        dotsHTML += `<span class="store-locations-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>`;
+    }
+    dotsContainer.innerHTML = dotsHTML;
+
+    document.querySelectorAll('.store-locations-dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            if (!isNaN(index) && index !== currentStoreIndex) {
+                goToStoreSlide(index);
             }
-        }, 20);
+        });
+    });
+}
+
+function goToStoreSlide(index) {
+    if (index < 0 || index >= storeTotal || index === currentStoreIndex) return;
+
+    const slider = document.getElementById('storeLocationsSlider');
+    if (!slider) return;
+
+    slider.style.opacity = '0';
+
+    setTimeout(() => {
+        currentStoreIndex = index;
+        slider.innerHTML = renderStoreCard(index);
+        slider.style.opacity = '1';
+
+        document.querySelectorAll('.store-locations-dot').forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+
+        // Reattach click handler
+        document.querySelector('.store-locations-card')?.addEventListener('click', function() {
+            const location = storeLocations[currentStoreIndex];
+            if (location && location.map) {
+                const mapUrl = location.map.includes('embed') 
+                    ? location.map.replace('/embed?', '/maps?') 
+                    : location.map;
+                window.open(mapUrl, '_blank');
+            }
+        });
+
+    }, 200);
+}
+
+function startStoreSlider() {
+    if (storeInterval) clearInterval(storeInterval);
+    storeInterval = setInterval(() => {
+        const nextIndex = (currentStoreIndex + 1) % storeTotal;
+        goToStoreSlide(nextIndex);
+    }, 3500);
+}
+
+function stopStoreSlider() {
+    if (storeInterval) {
+        clearInterval(storeInterval);
+        storeInterval = null;
     }
-    
-    function pauseScroll() {
-        isPaused = true;
-        if (categoryBoxResumeTimeout) clearTimeout(categoryBoxResumeTimeout);
-    }
-    
-    function resumeScroll() {
-        if (categoryBoxResumeTimeout) clearTimeout(categoryBoxResumeTimeout);
-        categoryBoxResumeTimeout = setTimeout(() => {
-            isPaused = false;
-        }, 2000);
-    }
-    
-    container.addEventListener('touchstart', pauseScroll, { passive: true });
-    container.addEventListener('touchend', resumeScroll, { passive: true });
-    container.addEventListener('touchcancel', resumeScroll, { passive: true });
-    
-    container.addEventListener('mouseenter', pauseScroll);
-    container.addEventListener('mouseleave', resumeScroll);
-    
-    startScroll();
 }
 
 // ===== NEW LAUNCH FEATURE CARD =====
@@ -426,6 +551,19 @@ document.addEventListener('mouseover', function(e) {
 document.addEventListener('mouseout', function(e) {
     if (e.target.closest('.new-launch-card') && newLaunchTotalProducts > 1) {
         startNewLaunchSlider();
+    }
+});
+
+// Mouse/Touch pause/resume for store slider
+document.addEventListener('mouseover', function(e) {
+    if (e.target.closest('.store-locations-card')) {
+        stopStoreSlider();
+    }
+});
+
+document.addEventListener('mouseout', function(e) {
+    if (e.target.closest('.store-locations-card') && storeTotal > 1) {
+        startStoreSlider();
     }
 });
 
@@ -741,7 +879,7 @@ async function loadProducts() {
     showLoading(grid);
     
     const paginationSettings = await DataLoader.loadPagination();
-    cardsPerPage = paginationSettings.cardsPerPage || 40;
+    cardsPerPage = paginationSettings.cardsPerPage || 20;
     
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('category');

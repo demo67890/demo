@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>About Us - Banashree Mobile</title>
+    <meta name="description" content="Learn about Banashree Mobile - your trusted smartphone retailer in Bhubaneswar. Multiple locations, genuine products, and excellent customer service.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+        .about-page {
+            padding: 40px 0;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 0;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #10b493;
+            border-radius: 3px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Company Description */
+        .company-description {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .company-description p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 20px;
+        }
+
+        .company-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #10b493;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Store Locations Grid */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #10b493;
+        }
+
+        .location-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .location-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .location-address {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .location-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #0f172a;
+            font-weight: 500;
+            padding: 8px 12px;
+            background: #f8fafc;
+            border-radius: 30px;
+            width: fit-content;
+        }
+
+        .location-phone i {
+            color: #10b493;
+        }
+
+        /* Contact Info Bar */
+        .contact-bar {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #10b493;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-text {
+            font-size: 16px;
+            color: #0f172a;
+            font-weight: 500;
+        }
+
+        .contact-text small {
+            display: block;
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        /* Terms & Conditions Section */
+        .terms-section {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .terms-header h2 {
+            font-size: 28px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .terms-header p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .term-item {
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .term-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .term-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #10b493;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .term-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .term-item p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .term-note {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 32px;
+            }
+            
+            .about-hero p {
+                font-size: 16px;
+            }
+            
+            .company-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero {
+                padding: 40px 0;
+            }
+            
+            .about-hero h1 {
+                font-size: 28px;
+            }
+            
+            .company-description,
+            .terms-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 📌 STICKY HEADER -->
+    <header class="sticky-header">
+        <!-- TOP INFO BAR -->
+        <div class="top-info-bar">
+            <div class="container">
+                <span class="shop-name">Banashree Mobile</span>
+                <span class="separator">|</span>
+                <span class="shop-address">Jaydev vihar, Bhubaneswar , 753013</span>
+            </div>
+        </div>
+        
+        <!-- MAIN HEADER -->
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <!-- LEFT: MENU ICON + HOME BUTTON -->
+                    <div class="left-nav">
+                        <div class="menu-icon" id="menuToggle">☰</div>
+                    </div>
+                    
+                    <!-- CENTER: LOGO -->
+                    <div class="logo">
+                        <a href="index.html">BANASHREE MOBILE</a>
+                    </div>
+                    
+                    <!-- RIGHT: DUMMY SEARCH (to prevent JS errors) -->
+                    <div class="right-nav">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH SUGGESTIONS (hidden) -->
+        <div class="search-suggestions" id="searchSuggestions" style="display: none;"></div>
+
+        <!-- MENU DROPDOWN -->
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="index.html" class="menu-item">
+                <span>🏠</span> Home
+            </a>
+            <a href="about.html" class="menu-item active">
+                <span>📋</span> About
+            </a>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <div class="container">
+            <!-- HERO SECTION -->
+            <section class="about-hero">
+                <h1>About Banashree Mobile</h1>
+                <p>Your trusted smartphone partner in Bhubaneswar since 2015</p>
+            </section>
+
+            <!-- COMPANY DESCRIPTION -->
+            <section class="company-description">
+                <p>Banashree Mobile is a trusted and growing mobile retail brand based in Bhubaneswar, offering a wide range of smartphones, Leptops, Teblets, Smart-Watches  at competitive prices.</p>
+                
+                <p>We aim to provide genuine products, transparent pricing, and excellent customer service. Our goal is to make mobile shopping simple, reliable, and affordable for everyone.</p>
+                
+                <p>We proudly operate multiple branches across Bhubaneswar, making it easier for customers to visit the nearest store and get the best deals and support.</p>
+                
+                <p>Customers can explore products on our website and contact us directly via call or WhatsApp for inquiries, availability, and orders.</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Store Locations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Brands Available</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT INFO BAR -->
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        Bhubaneswar, Odisha
+                        <small>Main Office</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">
+                        +91 97779 66677
+                        <small>Call or WhatsApp</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-text">
+                        banashreemobiles@gmail.com
+                        <small>Email Us</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STORE LOCATIONS SECTION -->
+            <div class="section-header">
+                <h2>Our Store Locations</h2>
+                <p>Visit your nearest Banashree Mobile store today</p>
+            </div>
+
+            <div class="locations-grid">
+                <!-- Jaydev Vihar -->
+                <div class="location-card">
+                    <div class="location-icon">📍</div>
+                    <h3>Jaydev Vihar Branch</h3>
+                    <p class="location-address">Near Jaydev Vihar Traffic Square, Entrance of Biju Patnaik College Road, Bhubaneswar – 753013</p>
+                    <div class="location-phone">
+                        <i class="fas fa-phone-alt"></i> 9776633666
+                    </div>
+                </div>
+
+                <!-- Barmunda -->
+                <div class="location-card">
+                    <div class="location-icon">📍</div>
+                    <h3>Barmunda Branch</h3>
+                    <p class="location-address">Near Barmunda Bus Stand, 1st Floor, Bank of India Building, Bhubaneswar</p>
+                    <div class="location-phone">
+                        <i class="fas fa-phone-alt"></i> 9583000060
+                    </div>
+                </div>
+
+                <!-- Raghunathpur -->
+                <div class="location-card">
+                    <div class="location-icon">📍</div>
+                    <h3>Raghunathpur Branch</h3>
+                    <p class="location-address">In front of Lalchand Jewellery, Side of Apollo Pharmacy, Nandankanan Road, Raghunathpur, Bhubaneswar</p>
+                    <div class="location-phone">
+                        <i class="fas fa-phone-alt"></i> 9776666877
+                    </div>
+                </div>
+
+                <!-- Samsung Exclusive Store -->
+                <div class="location-card">
+                    <div class="location-icon">📍</div>
+                    <h3>Samsung Exclusive Store</h3>
+                    <p class="location-address">Near Barmunda Bus Stand, 1st Floor, Bank of India, Bhubaneswar</p>
+                    <div class="location-phone">
+                        <i class="fas fa-phone-alt"></i> 9583000060
+                    </div>
+                </div>
+
+                <!-- Fire Station Square -->
+                <div class="location-card">
+                    <div class="location-icon">📍</div>
+                    <h3>Fire Station Square Branch</h3>
+                    <p class="location-address">Near Fire Station Square Traffic, In front of Ama Bus Stand, Side of Ganguram Sweets, Bhubaneswar</p>
+                    <div class="location-phone">
+                        <i class="fas fa-phone-alt"></i> 9583000060
+                    </div>
+                </div>
+            </div>
+
+            <!-- TERMS & CONDITIONS SECTION -->
+            <section class="terms-section">
+                <div class="terms-header">
+                    <h2>Terms & Conditions</h2>
+                    <p>Last updated: March 2026</p>
+                </div>
+
+                <div class="terms-grid">
+                    <!-- Term 1 -->
+                    <div class="term-item">
+                        <div class="term-number">01</div>
+                        <h3>Website Purpose</h3>
+                        <p>This website is created for information purposes only. Customers can view product details and contact the store for inquiries. No online orders or payments are accepted through this website. All purchases must be made by visiting the physical store.</p>
+                    </div>
+
+                    <!-- Term 2 -->
+                    <div class="term-item">
+                        <div class="term-number">02</div>
+                        <h3>Product Information</h3>
+                        <p>All product details, prices, and availability shown on this website are subject to change without prior notice.</p>
+                    </div>
+
+                    <!-- Term 3 -->
+                    <div class="term-item">
+                        <div class="term-number">03</div>
+                        <h3>Communication Policy</h3>
+                        <p>Customers are requested to avoid spam calls, repeated messages, or unnecessary inquiries. Excessive or abusive communication may lead to blocking of contact.</p>
+                    </div>
+
+                    <!-- Term 4 -->
+                    <div class="term-item">
+                        <div class="term-number">04</div>
+                        <h3>WhatsApp Usage</h3>
+                        <p>Our WhatsApp number is strictly for business purposes. Misuse, spamming, or sending irrelevant messages may result in permanent blocking.</p>
+                    </div>
+
+                    <!-- Term 5 -->
+                    <div class="term-item">
+                        <div class="term-number">05</div>
+                        <h3>Order & Purchase Policy</h3>
+                        <p>Products shown on the website are for display only. Final purchase, price confirmation, and billing will be done in-store only after customer visit.</p>
+                    </div>
+
+                    <!-- Term 6 -->
+                    <div class="term-item">
+                        <div class="term-number">06</div>
+                        <h3>No Guarantee of Availability</h3>
+                        <p>All products are subject to stock availability at the time of inquiry or store visit.</p>
+                    </div>
+
+                    <!-- Term 7 -->
+                    <div class="term-item">
+                        <div class="term-number">07</div>
+                        <h3>Limitation of Liability</h3>
+                        <p>Banashree Mobile will not be responsible for any loss or damage arising from misuse of information on this website.</p>
+                    </div>
+
+                    <!-- Term 8 -->
+                    <div class="term-item">
+                        <div class="term-number">08</div>
+                        <h3>Respectful Behavior</h3>
+                        <p>Customers must maintain respectful communication. Any abusive language or behavior will not be tolerated.</p>
+                    </div>
+                </div>
+
+                <!-- Term 9 - Full Width -->
+                <div style="margin-top: 20px;">
+                    <div class="term-item" style="width: 100%;">
+                        <div class="term-number">09</div>
+                        <h3>Updates to Terms</h3>
+                        <p>We may update these terms at any time without prior notice.</p>
+                    </div>
+                </div>
+
+                <div class="term-note">
+                    <strong>📝 Note:</strong> By using this website or contacting Banashree Mobile via call or WhatsApp, you agree to all the above terms and conditions.
+                </div>
+            </section>
+
+            <!-- BACK TO HOME BUTTON -->
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="index.html" class="btn btn-primary" style="display: inline-block; padding: 12px 30px; background: #0f172a; color: white; text-decoration: none; border-radius: 30px; font-weight: 600;">
+                    ← Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Call Now 🤙 </p>
+                    <p>📞 +91 9777966677 </p>
+                    <p>📞 +91 9583000060 </p>
+                    <p>📞 +91 9776666877 </p>
+                    <p>📞 +91 9583000030 </p>
+                    <p>Message Now 🗨️ </p>
+                    <p>💬 +91 9777966677 </p>
+                    <p>banashreemobiles@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+    <a href="https://youtube.com/@banashree_mobile?si=lWjVxz-QcIJL7MuC" target="_blank" rel="noopener noreferrer" style="color: #d83434; font-size: 24px; text-decoration: none; transition: transform 0.2s;">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
+                </div>
+            </div>
+            <div class="copyright">
+    © 2026 Banashree Mobile. All rights reserved.
+    <br>
+    Developed with <span class="heart">❤️</span> by <strong class="developer-name">Subhankar Bairagi</strong>
+</div>
+
+<style>
+    /* Copyright section styling */
+    .copyright {
+        text-align: center;
+        padding: 20px 0 10px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        line-height: 1.8;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 20px;
+    }
+
+    /* Heart styling with animation */
+    .heart {
+        display: inline-block;
+        color: #ff4d4d;
+        font-size: 16px;
+        animation: heartbeat 1.5s ease-in-out infinite;
+        margin: 0 2px;
+    }
+
+    /* Developer name styling */
+    .developer-name {
+        color: #61dac2;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+        cursor: default;
+    }
+
+    /* Hover effect on name */
+    .developer-name:hover {
+        color: #4ec9b0;
+        text-shadow: 0 0 10px rgba(97, 218, 194, 0.5);
+    }
+
+    /* Heartbeat animation */
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+        25% {
+            transform: scale(1.1);
+        }
+        35% {
+            transform: scale(1);
+        }
+        45% {
+            transform: scale(1.08);
+        }
+        55% {
+            transform: scale(1);
+        }
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 480px) {
+        .copyright {
+            font-size: 12px;
+            padding: 15px 0 5px;
+        }
+        
+        .heart {
+            font-size: 14px;
+        }
+    }
+</style>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        // Menu toggle functionality (fallback in case main.js has issues)
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuDropdown = document.getElementById('menuDropdown');
+            
+            if (menuToggle && menuDropdown) {
+                // Remove any existing listeners to prevent duplicates
+                menuToggle.replaceWith(menuToggle.cloneNode(true));
+                const newMenuToggle = document.getElementById('menuToggle');
+                
+                newMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    menuDropdown.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!newMenuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+                        newMenuToggle.classList.remove('active');
+                        menuDropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

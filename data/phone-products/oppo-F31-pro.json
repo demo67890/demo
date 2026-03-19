@@ -1,0 +1,64 @@
+{
+  "id": "oppo-F31-pro",
+  "name": "Oppo F31 Pro",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-F31-pro-gold.jpg",
+  "colors": [
+    {
+      "name": "Desert Gold",
+      "images": [
+        "assets/images/products/oppo-F31-pro-gold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Space Grey",
+      "images": [
+        "assets/images/products/oppo-F31-pro-grey.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 29473,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 31914,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 34408,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Desert Gold",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7300 Energy",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "7000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

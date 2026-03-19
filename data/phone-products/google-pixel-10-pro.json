@@ -1,0 +1,56 @@
+{
+  "id": "google-pixel-10-pro",
+  "name": "Google Pixel 10 Pro",
+  "brand": "Pixel",
+  "category": "Pixel",
+  "image": "assets/images/products/Google-Pixel-10pro-porcrlain.jpg",
+  "colors": [
+    {
+      "name": "Obsidian",
+      "images": [
+        "assets/images/products/Google-Pixel-10pro-porcrlain.jpg"
+        
+      ]
+    },
+    {
+      "name": "Porcelain",
+      "images": [
+        "assets/images/products/Google-Pixel-10pro-porcrlain.jpg"
+        
+      ]
+    },
+   
+    {
+      "name": "Moonstone",
+      "images": [
+        "assets/images/products/Google-Pixel-10pro-Moonstone.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-16",
+      "ram": "16 GB",
+      "storage": "256 GB",
+      "price": 119564,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Porcelain",
+    "variant": "256-16"
+  },
+  "specs": {
+    "Processor": "Google Tenser G5",
+    "Front Camera": "42 MP",
+    "Back Camera": "50 MP + 48 MP + 48 MP",
+    "Battery": "4870 mAh",
+    "Display": "LTPO OLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "oppo-reno-15-5G",
+  "name": "Oppo Reno 15 5G",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-reno-15-white.jpg",
+  "colors": [
+    {
+      "name": "Auora Blue",
+      "images": [
+        "assets/images/products/oppo-reno-15-Arorablue.jpg"
+        
+      ]
+    },
+   
+    {
+      "name": "Glacier White",
+      "images": [
+        "assets/images/products/oppo-reno-15-white.jpg"
+        
+      ]
+    },
+    {
+      "name": "Twilight Blue",
+      "images": [
+        "assets/images/products/oppo-reno-15-TwilightBlue.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+  
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 47916,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 52405,
+      "discount": 6.5,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 59340,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Glacier White",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 7 Gen 4",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP + 50 MP +  8 MP",
+    "Battery": "6500 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "oppo-reno-15c-5G",
+  "name": "Oppo Reno 15c 5G",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-reno-15-C-blue.jpg",
+  "colors": [
+    {
+      "name": "Afterglow Pink",
+      "images": [
+        "assets/images/products/oppo-reno-15-C-pink.jpg"
+        
+      ]
+    },
+   
+    {
+      "name": "Twilight Blue",
+      "images": [
+        "assets/images/products/oppo-reno-15-C-blue.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+  
+   
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 40211,
+      "discount": 5.5,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 44808,
+      "discount": 8.5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Twilight Blue",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 6 Gen 1",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 8 MP +  2 MP",
+    "Battery": "7000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

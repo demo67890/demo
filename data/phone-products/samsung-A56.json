@@ -1,0 +1,77 @@
+{
+  "id": "samsung-A56",
+  "name": "Samsung A56",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-A56-AwesomePink.jpg",
+  "colors": [
+    {
+      "name": "Awesome Graphite",
+      "images": [
+        "assets/images/products/samsung-A56-AwesomeGraphite.jpg"
+        
+      ]
+    },
+    {
+      "name": "Awesome LightGray",
+      "images": [
+        "assets/images/products/samsung-A56-AwesomeLightGrey.jpg"
+       
+      ]
+    },
+    {
+      "name": "Awesome Olive",
+      "images": [
+        "assets/images/products/samsung-A56-AwesomeOlive.jpg"
+       
+      ]
+    },
+    {
+      "name": "Awesome Pink",
+      "images": [
+        "assets/images/products/samsung-A56-AwesomePink.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 43157,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 48386,
+      "discount": 7,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 53845,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Awesome Pink",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Smasung Exynos 1580",
+    "Front Camera": "12 MP",
+    "Back Camera": "50 MP + 12 MP + 5 MP",
+    "Battery": "5000 mAh",
+    "Display": "Super AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

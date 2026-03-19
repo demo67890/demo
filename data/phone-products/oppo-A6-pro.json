@@ -1,0 +1,55 @@
+{
+  "id": "oppo-A6-pro",
+  "name": "Oppo A6 Pro",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-A6-pro-gold.jpg",
+  "colors": [
+    {
+      "name": "Aurora Gold",
+      "images": [
+        "assets/images/products/oppo-A6-pro-gold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Cappuccino Brown",
+      "images": [
+        "assets/images/products/oppo-A6-pro-brown.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 26315,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 29031,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Aurora Gold",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 6300",
+    "Front Camera": "16 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

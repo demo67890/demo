@@ -1,0 +1,71 @@
+{
+  "id": "redmi-15-c-5G",
+  "name": "Redmi 15C 5G",
+  "brand": "Redmi",
+  "category": "Redmi",
+  "image": "assets/images/products/redmi-15-c-purple.jpg",
+  "colors": [
+    
+    {
+      "name": "Midnight Black",
+      "images": [
+        "assets/images/products/redmi-15-c-black.jpg"
+       
+      ]
+    },
+    {
+      "name": "Moonlight Blue",
+      "images": [
+        "assets/images/products/redmi-15-c-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Dusk Purple",
+      "images": [
+        "assets/images/products/redmi-15-c-purple.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 14736,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 16488,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 18477,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Dusk Purple",
+    "variant": "128-4"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 6300",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP",
+    "Battery": "6000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

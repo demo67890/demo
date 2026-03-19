@@ -1,0 +1,76 @@
+{
+  "id": "iphone-16",
+  "name": "iPhone 16",
+  "brand": "Apple",
+  "category": "iPhone",
+  "image": "assets/images/products/iphone-16-pink.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/iphone-16-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "White",
+      "images": [
+        "assets/images/products/iphone-16-white.jpg"
+       
+      ]
+    },
+    {
+      "name": "Teal",
+      "images": [
+        "assets/images/products/iphone-16-teal.jpg"
+        
+      ]
+    },
+    {
+      "name": "Ultramarine",
+      "images": [
+        "assets/images/products/iphone-16-ultramarine.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pink",
+      "images": [
+        "assets/images/products/iphone-15-pink.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 67604,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 79681,
+      "discount": 6,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pink",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "A18 Bionic",
+    "Front Camera": "12 MP",
+    "Back Camera": "48 MP",
+    "Battery": "3561 mAh",
+    "Display": "XDR OLED",
+    "OS": "iOS 26",
+    "EMI Available": "UPTO 24 MONTH'S"
+  },
+  "status": "active"
+}

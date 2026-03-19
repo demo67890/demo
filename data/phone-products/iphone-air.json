@@ -1,0 +1,62 @@
+{
+  "id": "iphone-air",
+  "name": "iPhone Air",
+  "brand": "Apple",
+  "category": "iPhone",
+  "image": "assets/images/products/iPhone-Air-lightgold.jpg",
+  "colors": [
+    {
+      "name": "Cloud White",
+      "images": [
+        "assets/images/products/iPhone-Air-CloudWhite.jpg"
+        
+      ]
+    },
+    {
+      "name": "Light Gold",
+      "images": [
+        "assets/images/products/iPhone-Air-lightgold.jpg"
+       
+      ]
+    },
+    {
+      "name": "Space Black",
+      "images": [
+        "assets/images/products/iPhone-Air-SpaceBlack.jpg"
+       
+      ]
+    },
+    
+    {
+      "name": "Sky Blue",
+      "images": [
+        "assets/images/products/iPhone-Air-skyblue.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 108404,
+      "discount": 6,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Light Gold",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "A19 PRO",
+    "Front Camera": "18 MP",
+    "Back Camera": "48 MP",
+    "Battery": "3149 mAh",
+    "Display": "XDR OLED",
+    "OS": "iOS 26",
+    "EMI Available": "UPTO 24 MONTH'S"
+  },
+  "status": "active"
+}

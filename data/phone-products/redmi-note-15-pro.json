@@ -1,0 +1,64 @@
+{
+  "id": "redmi-note-15-pro",
+  "name": "Redmi Note 15 Pro",
+  "brand": "Redmi",
+  "category": "Redmi",
+  "image": "assets/images/products/redmi-note-15-pro-silver.jpg",
+  "colors": [
+    
+    {
+      "name": "Carbon Black",
+      "images": [
+        "assets/images/products/redmi-note-15-pro-black.jpg"
+       
+      ]
+    },
+    {
+      "name": "Mirage Blue",
+      "images": [
+        "assets/images/products/redmi-note-15-pro-plus-black.jpg"
+       
+      ]
+    },
+    {
+      "name": "Silver Ash",
+      "images": [
+        "assets/images/products/redmi-note-15-pro-silver.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 31578,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 34408,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Silver Ash",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 7400-Ultra",
+    "Front Camera": "20 MP",
+    "Back Camera": "200 MP + 8 MP",
+    "Battery": "6580 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

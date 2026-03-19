@@ -1,0 +1,57 @@
+{
+  "id": "vivo-y400-5G",
+  "name": "Vivo Y400 5G",
+  "brand": "Vivo",
+  "category": "Vivo",
+  "image": "assets/images/products/vivo-y400-oliveGreen.jpg",
+  "colors": [
+    {
+      "name": "Glam White",
+      "images": [
+        "assets/images/products/vivo-y400-GlamWhite.jpg"
+        
+      ]
+    },
+    {
+      "name": "Olive Green",
+      "images": [
+        "assets/images/products/vivo-y400-oliveGreen.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 24209,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 27173,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Olive Green",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 4 Gen 2 ",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 2 MP",
+    "Battery": "6000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

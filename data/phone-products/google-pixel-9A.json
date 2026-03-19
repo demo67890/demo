@@ -1,0 +1,55 @@
+{
+  "id": "google-pixel-9A",
+  "name": "Google Pixel 9A",
+  "brand": "Pixel",
+  "category": "Pixel",
+  "image": "assets/images/products/Google-Pixel-9a-Obsidian.jpg",
+  "colors": [
+    {
+      "name": "Obsidian",
+      "images": [
+        "assets/images/products/Google-Pixel-9a-Obsidian.jpg"
+        
+      ]
+    },
+    {
+      "name": "Iris",
+      "images": [
+        "assets/images/products/Google-Pixel-9a-Iris.jpg"
+       
+      ]
+    },
+    {
+      "name": "Porcelain",
+      "images": [
+        "assets/images/products/Google-Pixel-9a-Porcelain.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 53762,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Obsidian",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Google Tenser G4",
+    "Front Camera": "13 MP",
+    "Back Camera": "48 MP + 13 MP",
+    "Battery": "5000 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

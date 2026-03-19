@@ -1,0 +1,91 @@
+{
+  "id": "samsung-s26-ultra",
+  "name": "Samsung S26 Ultra",
+  "brand": "Samsung",
+  "category": "Samsung",
+  "image": "assets/images/products/samsung-S26-Ultra-PinkGold.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/products/samsung-S26-Ultra-Black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Cobait Violet",
+      "images": [
+        "assets/images/products/samsung-S26-Ultra-CobaltViolet.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pinkgold",
+      "images": [
+        "assets/images/products/samsung-S26-Ultra-PinkGold.jpg"
+       
+      ]
+    },
+    {
+      "name": "White",
+      "images": [
+        "assets/images/products/samsung-S26-Ultra-White.jpg"
+        
+      ]
+    },
+    {
+      "name": "SkyBlue",
+      "images": [
+        "assets/images/products/samsung-S26-Ultra-SkyBlue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Silver Shadow",
+      "images": [
+        "assets/images/products/samsung-S26-Ultra-SilverShade.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 145832,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 170212,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "1 TB-16",
+      "ram": "16 GB",
+      "storage": "1 TB",
+      "price": 206521,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pinkgold",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 8 Elite Gen 5",
+    "Front Camera": "12 MP",
+    "Back Camera": "200 MP + 50 MP + 50 MP + 10 MP",
+    "Battery": "5000 mAh",
+    "Display": "QHD + Dynamic AMOLED 2X",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

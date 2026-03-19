@@ -1,0 +1,57 @@
+{
+  "id": "realme-c85",
+  "name": "Realme C85",
+  "brand": "Realme",
+  "category": "Realme",
+  "image": "assets/images/products/realme-c85-green.jpg",
+  "colors": [
+    
+    {
+      "name": "Parrot Purple",
+      "images": [
+        "assets/images/products/realme-c85-purple.jpg"
+       
+      ]
+    },
+    {
+      "name": "Peacock Green",
+      "images": [
+        "assets/images/products/realme-c85-green.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 18946,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 21738,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Peacock Green",
+    "variant": "128-4"
+  },
+  "specs": {
+    "Processor": "Dimensity 6300",
+    "Front Camera": "8 MP",
+    "Back Camera": "50 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

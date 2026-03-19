@@ -1,0 +1,70 @@
+{
+  "id": "realme-16-pro-plus",
+  "name": "Realme 16 Pro Plus",
+  "brand": "Realme",
+  "category": "Realme",
+  "image": "assets/images/products/realme-16-pro-plus-gold.jpg",
+  "colors": [
+    {
+      "name": "Master Gold",
+      "images": [
+        "assets/images/products/realme-16-pro-plus-gold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Camellia Pink",
+      "images": [
+        "assets/images/products/realme-16-pro-plus-pink.jpg"
+       
+      ]
+    },
+    {
+      "name": "Master Grey",
+      "images": [
+        "assets/images/products/realme-16-pro-plus-grey.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 46315,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 49461,
+      "discount": 7,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 53845,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Master Gold",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Qualcomm Snapdragon 7 Gen 4",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 50 MP + 8 MP",
+    "Battery": "7000 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

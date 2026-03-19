@@ -1,0 +1,64 @@
+{
+  "id": "oppo-reno-15-pro-mini",
+  "name": "Oppo Reno 15 Pro Mini",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-reno-15-pro-mini-pink.jpg",
+  "colors": [
+    {
+      "name": "Cocoa Brown",
+      "images": [
+        "assets/images/products/oppo-reno-15-pro-mini-brown.jpg"
+        
+      ]
+    },
+    {
+      "name": "Crystal Pink",
+      "images": [
+        "assets/images/products/oppo-reno-15-pro-mini-pink.jpg"
+        
+      ]
+    },
+   
+    {
+      "name": "Glacier White",
+      "images": [
+        "assets/images/products/oppo-reno-15-pro-mini-white.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+  
+   
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 63829,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "512-12",
+      "ram": "12 GB",
+      "storage": "512 GB",
+      "price": 71427,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Crystal Pink",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 8450",
+    "Front Camera": "50 MP",
+    "Back Camera": "200 MP + 50 MP +  50 MP",
+    "Battery": "6200 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

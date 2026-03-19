@@ -1,0 +1,63 @@
+{
+  "id": "oppo-A6x-5G",
+  "name": "Oppo A6x 5G",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-A6-x-green.jpg",
+  "colors": [
+    {
+      "name": "Blue",
+      "images": [
+        "assets/images/products/oppo-A6-x-blue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Green",
+      "images": [
+        "assets/images/products/oppo-A6-x-green.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "64-4",
+      "ram": "4 GB",
+      "storage": "64 GB",
+      "price": 14582,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 17020,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 19564,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Green",
+    "variant": "64-4"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 6300",
+    "Front Camera": "5 MP",
+    "Back Camera": "13 MP",
+    "Battery": "6500 mAh",
+    "Display": "LCD",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}

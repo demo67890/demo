@@ -1,0 +1,62 @@
+{
+  "id": "google-pixel-10",
+  "name": "Google Pixel 10",
+  "brand": "Pixel",
+  "category": "Pixel",
+  "image": "assets/images/products/Google-Pixel-10-Frost.jpg",
+  "colors": [
+    {
+      "name": "Frost",
+      "images": [
+        "assets/images/products/Google-Pixel-10-Frost.jpg"
+        
+      ]
+    },
+    {
+      "name": "Indigo",
+      "images": [
+        "assets/images/products/Google-Pixel-10-Indigo.jpg"
+       
+      ]
+    },
+    {
+      "name": "Lemongrass",
+      "images": [
+        "assets/images/products/Google-Pixel-10-LemonGrass.jpg"
+       
+      ]
+    },
+    {
+      "name": "Obsidian",
+      "images": [
+        "assets/images/products/Google-Pixel-10-Obsidian.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 86020,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Frost",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "Google Tenser G5",
+    "Front Camera": "10.5 MP",
+    "Back Camera": "48 MP + 13 MP + 10.8 MP",
+    "Battery": "4970 mAh",
+    "Display": "OLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "moto-G96",
+  "name": "Motorola G96",
+  "brand": "Motorola",
+  "category": "Motorola",
+  "image": "assets/images/products/Moto-G96-Pantone-CattleyaOrchid.jpg",
+  "colors": [
+    {
+      "name": "Pantone Ashleigh Blue",
+      "images": [
+        "assets/images/products/Moto-G96-Pantone-AshleighBlue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Cattleya Orchid",
+      "images": [
+        "assets/images/products/Moto-G96-Pantone-CattleyaOrchid.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Greener Pastures",
+      "images": [
+        "assets/images/products/Moto-G96-Pantone-Greener-Pastures.jpg"
+        
+      ]
+    },
+    {
+      "name": "Pantone Dresden Blue",
+      "images": [
+        "assets/images/products/Moto-G96-Pantone-DresdenBlue.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 19999,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 21504,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pantone Cattleya Orchid",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 7s Gen 2",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 8 MP",
+    "Battery": "5500 mAh",
+    "Display": "pOLED",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

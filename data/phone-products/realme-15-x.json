@@ -1,0 +1,62 @@
+{
+  "id": "realme-15-x",
+  "name": "Realme 15X",
+  "brand": "Realme",
+  "category": "Realme",
+  "image": "assets/images/products/realme-15-x-red.jpg",
+  "colors": [
+    {
+      "name": "Marine Blue",
+      "images": [
+        "assets/images/products/realme-15-x-MarineBlue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Aqua Blue",
+      "images": [
+        "assets/images/products/realme-15-x-aquaBlue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Maroon Red",
+      "images": [
+        "assets/images/products/realme-15-x-red.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 22339,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 25274,
+      "discount": 9,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Maroon Red",
+    "variant": "128-6"
+  },
+  "specs": {
+    "Processor": "Dimensity 6300",
+    "Front Camera": "50 MP",
+    "Back Camera": "50 MP",
+    "Battery": "7000 mAh",
+    "Display": "LCD",
+    "OS": "Android 16",
+    "EMI Available": "NO COST EMI"
+  },
+  "status": "active"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "oppo-find-x9",
+  "name": "Oppo Find X9",
+  "brand": "Oppo",
+  "category": "Oppo",
+  "image": "assets/images/products/oppo-find-x9-red.jpg",
+  "colors": [
+    {
+      "name": "Space Black",
+      "images": [
+        "assets/images/products/oppo-find-x9-black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Titanium Grey",
+      "images": [
+        "assets/images/products/oppo-find-x9-grey.jpg"
+        
+      ]
+    },
+    {
+      "name": "Velvet Red",
+      "images": [
+        "assets/images/products/oppo-find-x9-red.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+  
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 78946,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "512-16",
+      "ram": "16 GB",
+      "storage": "512 GB",
+      "price": 92390,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Velvet Red",
+    "variant": "256-12"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 9500",
+    "Front Camera": "32 MP",
+    "Back Camera": "50 MP + 50 MP + 50 MP +  2 MP",
+    "Battery": "7025 mAh",
+    "Display": "AMOLED",
+    "OS": "Android 16"
+  },
+  "status": "active"
+}
