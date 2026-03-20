@@ -1,0 +1,55 @@
+{
+  "id": "samsung-tab-A-11-lte",
+  "name": "Samsung Tab-A11 Lte",
+  "brand": "Samsung",
+  "category": "Tablet",
+  "image": "assets/images/tablets/samsung-tab-A-11-lte-silver.jpg",
+  "colors": [
+    {
+      "name": "Grey",
+      "images": [
+        "assets/images/tablets/samsung-tab-A-11-lte-grey.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/tablets/samsung-tab-A-11-lte-silver.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "64-4",
+      "ram": "4 GB",
+      "storage": "64 GB",
+      "price": 19587,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 26315,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Silver",
+    "variant": "64-4"
+  },
+  "specs": {
+    "Processor": "MediaTek Helio G99",
+    "Front Camera": "5 MP",
+    "Back Camera": "8 MP",
+    "Battery": "5100 mAh",
+    "Display Size": "11-inch",
+    "Conectivity": "Wi-Fi + Cellular"
+    
+  },
+  "status": "active"
+}

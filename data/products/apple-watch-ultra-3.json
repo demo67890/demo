@@ -1,0 +1,46 @@
+{
+  "id": "apple-watch-ultra-3",
+  "name": "Apple Watch Ultra-3",
+  "brand": "Apple",
+  "category": "Watch",
+  "image": "assets/images/watch/apple-watch-ultra-3-Natural.jpg",
+  "colors": [
+    {
+      "name": "Black",
+      "images": [
+        "assets/images/watch/apple-watch-ultra-3-Black.jpg"
+        
+      ]
+    },
+    {
+      "name": "Natural",
+      "images": [
+        "assets/images/watch/apple-watch-ultra-3-Natural.jpg"
+       
+      ]
+    }
+  ],
+
+  "variants": [
+    
+    {
+      
+      "price": 97717,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  
+  "default": {
+    "color": "Natural"
+
+  },
+  "specs": {
+    "Water Resistance": "Yes",
+    "Size & Weight": "49 MM",
+    "Display": "OLEDs and LTPO3",
+    "Calling": "GPS + cellular"
+    
+  },
+  "status": "active"
+}

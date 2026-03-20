@@ -1,0 +1,53 @@
+{
+  "id": "apple-watch-series-11-5",
+  "name": "Apple Watch Series-11",
+  "brand": "Apple",
+  "category": "Watch",
+  "image": "assets/images/watch/apple-watch-series-11-Gold.jpg",
+  "colors": [
+    {
+      "name": "Gold",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-Gold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Natural",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-natural.jpg"
+       
+      ]
+    },
+    {
+      "name": "Slate",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-slate.jpg"
+        
+      ]
+    }
+  ],
+
+  "variants": [
+    
+    {
+      
+      "price": 85000,
+      "discount": 6,
+      "available": true
+    }
+  ],
+  
+  "default": {
+    "color": "Gold"
+
+  },
+  "specs": {
+    "Water Resistance": "Yes",
+    "Size & Weight": "42 MM",
+    "Display": "OLEDs and LTPO3",
+    "Calling": "GPS + cellular"
+    
+  },
+  "status": "active"
+}

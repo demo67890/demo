@@ -1,0 +1,38 @@
+{
+  "id": "mac-mini-silver",
+  "name": "Mac Mini",
+  "brand": "Apple",
+  "category": "Laptop",
+  "image": "assets/images/laptops/mac-mini-silver.jpg",
+  "colors": [
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/laptops/mac-mini-silver.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    
+    {
+      "id": "512-24",
+      "ram": "24 GB",
+      "storage": "512 GB",
+      "price": 159468,
+      "discount": 6,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Silver",
+    "variant": "256-24"
+  },
+  "specs": {
+    "Processor": "Apple M4 Pro chip",
+    "Graphics": "16-core GPU",
+    "OS": "macOS"
+    
+  },
+  "status": "active"
+}

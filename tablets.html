@@ -7,8 +7,87 @@
     <meta name="description" content="Browse all Tablets available at Banashree Mobile. Apple iPad, Samsung Tab, Lenovo and more.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ===== LOGO STYLES (same as index.html) ===== */
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .logo span {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            background: linear-gradient(135deg, #0f172a, #61dac2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 1024px) {
+            .logo img {
+                height: 28px;
+            }
+            .logo span {
+                font-size: 18px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .logo a {
+                gap: 6px;
+            }
+            .logo img {
+                height: 24px;
+            }
+            .logo span {
+                font-size: 16px;
+            }
+        }
+
+        /* Very Small Mobile */
+        @media (max-width: 480px) {
+            .logo img {
+                height: 20px;
+            }
+            .logo span {
+                font-size: 14px;
+            }
+        }
+
+        /* Page Header Styles */
+        .page-header {
+            padding: 30px 0;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
-<body>
+<!-- ✅ ADDED: data-category for typing animation -->
+<body data-category="tablet">
     <!-- Same sticky header as index.html -->
     <header class="sticky-header">
         <!-- TOP INFO BAR -->
@@ -16,7 +95,7 @@
             <div class="container">
                 <span class="shop-name">Banashree Mobile</span>
                 <span class="separator">|</span>
-                <span class="shop-address">Jaydev vihar, Bhubaneswar , 753013</span>
+                <span class="shop-address">Jaydev vihar, Bhubaneswar , 751013</span>
             </div>
         </div>
         
@@ -27,12 +106,14 @@
                     <!-- LEFT: MENU ICON + HOME BUTTON -->
                     <div class="left-nav">
                         <div class="menu-icon" id="menuToggle">☰</div>
-                        
                     </div>
                     
-                    <!-- CENTER: LOGO/SHOP NAME -->
+                    <!-- CENTER: LOGO WITH IMAGE -->
                     <div class="logo">
-                        <a href="index.html">BANASHREE MOBILE</a>
+                        <a href="index.html">
+                            <img src="assets/images/main-logo.png" alt="">
+                            <span>BANASHREE MOBILE</span>
+                        </a>
                     </div>
                     
                     <!-- RIGHT: SEARCH WRAPPER + CALL ICON -->
@@ -41,7 +122,6 @@
                             <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
                             <span class="search-submit">🔍</span>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -58,7 +138,6 @@
             <a href="about.html" class="menu-item">
                 <span>📋</span> About
             </a>
-            
         </div>
     </header>
 
@@ -137,85 +216,85 @@
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-    <a href="https://youtube.com/@banashree_mobile?si=lWjVxz-QcIJL7MuC" target="_blank" rel="noopener noreferrer" style="color: #d83434; font-size: 24px; text-decoration: none; transition: transform 0.2s;">
-        <i class="fab fa-youtube"></i>
-    </a>
-</div>
+                        <a href="https://youtube.com/@banashree_mobile?si=lWjVxz-QcIJL7MuC" target="_blank" rel="noopener noreferrer" style="color: #d83434; font-size: 24px; text-decoration: none; transition: transform 0.2s;">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
-    © 2026 Banashree Mobile. All rights reserved.
-    <br>
-    Developed with <span class="heart">❤️</span> by <strong class="developer-name">Subhankar Bairagi</strong>
-</div>
+                © 2026 Banashree Mobile. All rights reserved.
+                <br>
+                Developed with <span class="heart">❤️</span> by <strong class="developer-name">Subhankar Bairagi</strong>
+            </div>
 
-<style>
-    /* Copyright section styling */
-    .copyright {
-        text-align: center;
-        padding: 20px 0 10px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 14px;
-        line-height: 1.8;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 20px;
-    }
+            <style>
+                /* Copyright section styling */
+                .copyright {
+                    text-align: center;
+                    padding: 20px 0 10px;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 14px;
+                    line-height: 1.8;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    margin-top: 20px;
+                }
 
-    /* Heart styling with animation */
-    .heart {
-        display: inline-block;
-        color: #ff4d4d;
-        font-size: 16px;
-        animation: heartbeat 1.5s ease-in-out infinite;
-        margin: 0 2px;
-    }
+                /* Heart styling with animation */
+                .heart {
+                    display: inline-block;
+                    color: #ff4d4d;
+                    font-size: 16px;
+                    animation: heartbeat 1.5s ease-in-out infinite;
+                    margin: 0 2px;
+                }
 
-    /* Developer name styling */
-    .developer-name {
-        color: #61dac2;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-        transition: all 0.3s ease;
-        cursor: default;
-    }
+                /* Developer name styling */
+                .developer-name {
+                    color: #61dac2;
+                    font-weight: 600;
+                    letter-spacing: 0.3px;
+                    transition: all 0.3s ease;
+                    cursor: default;
+                }
 
-    /* Hover effect on name */
-    .developer-name:hover {
-        color: #4ec9b0;
-        text-shadow: 0 0 10px rgba(97, 218, 194, 0.5);
-    }
+                /* Hover effect on name */
+                .developer-name:hover {
+                    color: #4ec9b0;
+                    text-shadow: 0 0 10px rgba(97, 218, 194, 0.5);
+                }
 
-    /* Heartbeat animation */
-    @keyframes heartbeat {
-        0%, 100% {
-            transform: scale(1);
-        }
-        25% {
-            transform: scale(1.1);
-        }
-        35% {
-            transform: scale(1);
-        }
-        45% {
-            transform: scale(1.08);
-        }
-        55% {
-            transform: scale(1);
-        }
-    }
+                /* Heartbeat animation */
+                @keyframes heartbeat {
+                    0%, 100% {
+                        transform: scale(1);
+                    }
+                    25% {
+                        transform: scale(1.1);
+                    }
+                    35% {
+                        transform: scale(1);
+                    }
+                    45% {
+                        transform: scale(1.08);
+                    }
+                    55% {
+                        transform: scale(1);
+                    }
+                }
 
-    /* Responsive for mobile */
-    @media (max-width: 480px) {
-        .copyright {
-            font-size: 12px;
-            padding: 15px 0 5px;
-        }
-        
-        .heart {
-            font-size: 14px;
-        }
-    }
-</style>
+                /* Responsive for mobile */
+                @media (max-width: 480px) {
+                    .copyright {
+                        font-size: 12px;
+                        padding: 15px 0 5px;
+                    }
+                    
+                    .heart {
+                        font-size: 14px;
+                    }
+                }
+            </style>
         </div>
     </footer>
 

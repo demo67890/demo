@@ -6,11 +6,16 @@
  * AND DISCOUNT ON PRODUCT CARDS + DYNAMIC RAM/STORAGE IN SPECS
  * AND FIXED TRENDING SECTION WITH DISCOUNT PRICE
  * AND STORE LOCATIONS SLIDER
- * AND TYPING ANIMATION FOR SEARCH PLACEHOLDER
+ * AND TYPING ANIMATION FOR SEARCH PLACEHOLDER (CATEGORY BASED)
+ * AND SWIPE BACK PREVENTION (FIXED - ONLY EDGE SWIPE, BACK BUTTONS WORK)
+ * AND FIXED SORTING FUNCTIONALITY (NOW WORKS FIRST TIME)
  * 🚫 AUTO-SCROLL REMOVED - Only manual scroll
  */
 
 document.addEventListener('DOMContentLoaded', async function() {
+    // Prevent swipe back navigation (only edge swipe)
+    preventSwipeBack();
+    
     // Initialize typing animation for search (must come before initSearch)
     initTypingPlaceholder();
     
@@ -34,7 +39,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         await loadNewLaunchFeature();
         await loadTrending();
         await loadProducts();
-        initSorting();
+        
+        // ✅ FIX: Wait for products to load then initialize sorting
+        setTimeout(() => {
+            initSorting();
+        }, 100);
         
         setTimeout(initCategoryBoxScroll, 500);
         
@@ -112,30 +121,64 @@ const categoryBoxData = [
     
 ];
 
-// ===== TYPING ANIMATION FOR SEARCH PLACEHOLDER =====
+// ===== ✅ FIXED: PREVENT ONLY LEFT EDGE SWIPE BACK (BACK BUTTONS WORK PERFECTLY) =====
+function preventSwipeBack() {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+    }, { passive: true });
+    
+    document.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const touchEndTime = Date.now();
+        
+        const diffX = touchEndX - touchStartX;
+        const diffY = Math.abs(touchEndY - touchStartY);
+        const timeDiff = touchEndTime - touchStartTime;
+        
+        // अगर fast swipe है (under 300ms) और horizontal और left edge से
+        if (timeDiff < 300 && diffX > 50 && diffY < 30 && touchStartX < 30) {
+            // Left edge se right swipe - इसे block करो
+            e.preventDefault();
+            return false;
+        }
+    }, { passive: false });
+    
+    // ⭐ IMPORTANT: history.pushState को हटाया - इसी से back buttons 2 बार लग रहे थे
+    // Back buttons normal काम करेंगे
+}
+
+// ===== ✅ UPDATED: TYPING ANIMATION FOR SEARCH PLACEHOLDER (CATEGORY BASED) =====
 function initTypingPlaceholder() {
     const searchInput = document.getElementById('searchInput');
     if (!searchInput) return;
 
-    // List of phone names to type
-    const phoneList = [
-        'iPhone',
-        'Samsung',
-        'Vivo',
-        'Oppo', 
-        'Redmi',
-        'Motorola',
-        'Nothing',
-        'Pixel',
-        'Realme'
-    ];
+    // Detect category from body data attribute
+    const category = document.body.getAttribute('data-category') || 'phone';
+    
+    // Category-based word lists
+    const searchData = {
+        phone: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola', 'Nothing', 'Pixel', 'Realme'],
+        laptop: ['Mac Mini', 'Macbook Air', 'Macbook Neo', 'HP'],
+        watch: ['Apple'],
+        tablet: ['iPad', 'Samsung Tab', 'Redmi Pad'],
+        product: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola']
+    };
 
-    const staticText = 'Search phone '; // हमेशा दिखेगा
+    // Get words for current category (fallback to phone)
+    const words = searchData[category] || searchData.phone;
+    const staticText = `Search ${category} `;
 
     function typeEffect() {
         if (isTypingPaused) return;
 
-        const currentPhone = phoneList[typingCurrentIndex];
+        const currentWord = words[typingCurrentIndex];
         
         if (isDeleting) {
             // Deleting text
@@ -146,10 +189,10 @@ function initTypingPlaceholder() {
         }
 
         // Update placeholder
-        searchInput.placeholder = staticText + currentPhone.substring(0, typingCharIndex);
+        searchInput.placeholder = staticText + currentWord.substring(0, typingCharIndex);
 
         // Check if typing complete
-        if (!isDeleting && typingCharIndex === currentPhone.length) {
+        if (!isDeleting && typingCharIndex === currentWord.length) {
             // Pause at full word
             isDeleting = true;
             typingTimeout = setTimeout(typeEffect, 2000); // 2 second pause
@@ -159,7 +202,7 @@ function initTypingPlaceholder() {
         // Check if deletion complete
         if (isDeleting && typingCharIndex === 0) {
             isDeleting = false;
-            typingCurrentIndex = (typingCurrentIndex + 1) % phoneList.length;
+            typingCurrentIndex = (typingCurrentIndex + 1) % words.length;
             typingTimeout = setTimeout(typeEffect, 200); // Short pause before next word
             return;
         }
@@ -182,6 +225,11 @@ function initTypingPlaceholder() {
         typeEffect();
     });
 
+    // Reset animation variables for new page
+    typingCurrentIndex = 0;
+    typingCharIndex = 0;
+    isDeleting = false;
+    
     // Start animation
     typeEffect();
 }
@@ -230,8 +278,6 @@ function initCategoryBoxScroll() {
     setTimeout(updateButtons, 100);
 }
 
-// ===== 🚫 AUTO-SCROLL FUNCTIONS COMPLETELY REMOVED =====
-
 // ===== STORE LOCATIONS SLIDER =====
 async function loadStoreLocations() {
     const container = document.getElementById('storeLocationsContainer');
@@ -240,7 +286,7 @@ async function loadStoreLocations() {
     container.innerHTML = '<div class="new-launch-loader"><div class="spinner"></div></div>';
 
     try {
-        const response = await fetch('data/store-locations.json');
+        const response = await fetch('data/store-location.json');
         if (!response.ok) throw new Error('Failed to load store locations');
         storeLocations = await response.json();
         
@@ -255,10 +301,10 @@ async function loadStoreLocations() {
         currentStoreIndex = 0;
 
         const sliderHTML = `
-            <div class="store-locations-slider" id="storeLocationsSlider">
+            <div class="store-location-slider" id="storeLocationsSlider">
                 ${renderStoreCard(0)}
             </div>
-            ${storeTotal > 1 ? '<div class="store-locations-dots" id="storeLocationsDots"></div>' : ''}
+            ${storeTotal > 1 ? '<div class="store-location-dots" id="storeLocationsDots"></div>' : ''}
         `;
 
         container.innerHTML = sliderHTML;
@@ -269,7 +315,7 @@ async function loadStoreLocations() {
         }
 
         // Click handler to open map
-        document.querySelector('.store-locations-card')?.addEventListener('click', function() {
+        document.querySelector('.store-location-card')?.addEventListener('click', function() {
             const location = storeLocations[currentStoreIndex];
             if (location && location.map) {
                 // Try to extract place ID or open Google Maps
@@ -291,7 +337,7 @@ function renderStoreCard(index) {
     if (!location) return '';
 
     return `
-        <div class="store-locations-card" data-index="${index}">
+        <div class="store-location-card" data-index="${index}">
             <div class="store-map">
                 <iframe src="${location.map}" 
                         width="100%" 
@@ -316,11 +362,11 @@ function createStoreDots() {
 
     let dotsHTML = '';
     for (let i = 0; i < storeTotal; i++) {
-        dotsHTML += `<span class="store-locations-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>`;
+        dotsHTML += `<span class="store-location-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>`;
     }
     dotsContainer.innerHTML = dotsHTML;
 
-    document.querySelectorAll('.store-locations-dot').forEach(dot => {
+    document.querySelectorAll('.store-location-dot').forEach(dot => {
         dot.addEventListener('click', function() {
             const index = parseInt(this.dataset.index);
             if (!isNaN(index) && index !== currentStoreIndex) {
@@ -343,7 +389,7 @@ function goToStoreSlide(index) {
         slider.innerHTML = renderStoreCard(index);
         slider.style.opacity = '1';
 
-        document.querySelectorAll('.store-locations-dot').forEach((dot, i) => {
+        document.querySelectorAll('.store-location-dot').forEach((dot, i) => {
             if (i === index) {
                 dot.classList.add('active');
             } else {
@@ -352,7 +398,7 @@ function goToStoreSlide(index) {
         });
 
         // Reattach click handler
-        document.querySelector('.store-locations-card')?.addEventListener('click', function() {
+        document.querySelector('.store-location-card')?.addEventListener('click', function() {
             const location = storeLocations[currentStoreIndex];
             if (location && location.map) {
                 const mapUrl = location.map.includes('embed') 
@@ -556,13 +602,13 @@ document.addEventListener('mouseout', function(e) {
 
 // Mouse/Touch pause/resume for store slider
 document.addEventListener('mouseover', function(e) {
-    if (e.target.closest('.store-locations-card')) {
+    if (e.target.closest('.store-location-card')) {
         stopStoreSlider();
     }
 });
 
 document.addEventListener('mouseout', function(e) {
-    if (e.target.closest('.store-locations-card') && storeTotal > 1) {
+    if (e.target.closest('.store-location-card') && storeTotal > 1) {
         startStoreSlider();
     }
 });
@@ -721,33 +767,65 @@ function initBottomNav() {
     document.body.appendChild(bottomNav);
 }
 
-// ===== SORTING FUNCTIONALITY =====
+// ===== ✅ FULLY FIXED: SORTING FUNCTIONALITY (WORKS FIRST TIME) =====
 function initSorting() {
+    // Check if already exists
     if (document.querySelector('.sorting-bar')) return;
     
+    const productSection = document.querySelector('.product-section .container');
+    if (!productSection) return;
+    
+    // Create sort bar
     const sortBar = document.createElement('div');
     sortBar.className = 'sorting-bar';
     sortBar.innerHTML = `
         <select class="sort-select" id="sortSelect">
-            <option value="default">Default</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="name-asc">Name: A to Z</option>
-            <option value="name-desc">Name: Z to A</option>
+            <option value="default">✨ Default</option>
+            <option value="price-low">💰 Price: Low to High</option>
+            <option value="price-high">💰 Price: High to Low</option>
+            <option value="name-asc">📱 Name: A to Z</option>
+            <option value="name-desc">📱 Name: Z to A</option>
         </select>
     `;
     
-    const productSection = document.querySelector('.product-section .container');
-    if (productSection) {
-        const productGrid = document.getElementById('productGrid');
-        if (productGrid) productSection.insertBefore(sortBar, productGrid);
+    // Insert before product grid
+    const productGrid = document.getElementById('productGrid');
+    if (productGrid) {
+        productSection.insertBefore(sortBar, productGrid);
     }
     
-    document.getElementById('sortSelect')?.addEventListener('change', function(e) {
-        currentSort = e.target.value;
-        currentPage = 1;
-        renderProducts();
-    });
+    // ✅ FIX: Proper event listener attachment
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        // Set current value
+        sortSelect.value = currentSort;
+        
+        // Add event listener directly
+        sortSelect.addEventListener('change', function(e) {
+            const selectedValue = e.target.value;
+            console.log('Sort changed to:', selectedValue);
+            
+            // Update global variable
+            currentSort = selectedValue;
+            currentPage = 1; // Reset to first page
+            
+            // Show loading effect
+            if (productGrid) {
+                productGrid.style.opacity = '0.5';
+                productGrid.style.transition = 'opacity 0.2s ease';
+            }
+            
+            // Re-render products
+            renderProducts();
+            
+            // Remove loading effect
+            if (productGrid) {
+                setTimeout(() => {
+                    productGrid.style.opacity = '1';
+                }, 200);
+            }
+        });
+    }
 }
 
 // ===== CATEGORY FILTER FUNCTIONS =====
@@ -974,35 +1052,71 @@ function showLoading(element) {
     element.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
 }
 
+// ===== FIXED: GET FILTERED AND SORTED PRODUCTS =====
 function getFilteredAndSortedProducts() {
+    // पहले filter करो
     let filtered = currentFilter === 'All' 
-        ? allProducts 
+        ? [...allProducts] 
         : allProducts.filter(p => p.brand === currentFilter);
     
+    console.log('Sorting by:', currentSort, 'Total products:', filtered.length);
+    
+    // फिर sort करो
     switch(currentSort) {
         case 'price-low':
             filtered.sort((a, b) => {
-                const priceA = parseInt(a.price?.replace(/[^0-9]/g, '') || 0);
-                const priceB = parseInt(b.price?.replace(/[^0-9]/g, '') || 0);
+                const priceA = getNumericPrice(a);
+                const priceB = getNumericPrice(b);
                 return priceA - priceB;
             });
             break;
+            
         case 'price-high':
             filtered.sort((a, b) => {
-                const priceA = parseInt(a.price?.replace(/[^0-9]/g, '') || 0);
-                const priceB = parseInt(b.price?.replace(/[^0-9]/g, '') || 0);
+                const priceA = getNumericPrice(a);
+                const priceB = getNumericPrice(b);
                 return priceB - priceA;
             });
             break;
+            
         case 'name-asc':
-            filtered.sort((a, b) => a.name.localeCompare(b.name));
+            filtered.sort((a, b) => 
+                (a.name || '').localeCompare(b.name || '')
+            );
             break;
+            
         case 'name-desc':
-            filtered.sort((a, b) => b.name.localeCompare(a.name));
+            filtered.sort((a, b) => 
+                (b.name || '').localeCompare(a.name || '')
+            );
+            break;
+            
+        default:
+            // Default - कोई sorting नहीं
             break;
     }
     
     return filtered;
+}
+
+// ===== HELPER: Extract numeric price =====
+function getNumericPrice(product) {
+    if (!product) return 0;
+    
+    // अगर variants में price है
+    if (product.variants && product.variants.length > 0) {
+        const variant = product.variants[0];
+        if (variant.price) return Number(variant.price) || 0;
+    }
+    
+    // अगर direct price है
+    if (product.price) {
+        // Remove ₹, commas, and convert to number
+        const numericPrice = String(product.price).replace(/[^0-9]/g, '');
+        return parseInt(numericPrice) || 0;
+    }
+    
+    return 0;
 }
 
 // ===== RENDER PRODUCTS - UPDATED WITH DISCOUNT PRICE =====
@@ -1544,7 +1658,7 @@ function renderProductDetail(product) {
                 </div>
             </div>
             
-            ${product.variants && product.variants.length > 0 ? `
+            ${product.category !=="Watch" && product.variants && product.variants.length > 0 ? `
                 <div class="variant-section">
                     <h4>Select Storage & RAM</h4>
                     <div class="variant-grid">
@@ -1589,20 +1703,29 @@ function renderProductDetail(product) {
                 <h3 class="specs-title">📋 Full Specifications</h3>
                 <div class="specs-list">
                     <!-- DYNAMIC: RAM from variant -->
+                    ${product.category !== "Watch" ? `
                     <div class="spec-item" id="spec-ram">
                         <span class="spec-label">RAM:</span>
                         <span class="spec-value">${ramFromVariant}</span>
                     </div>
+` : ""}
                     
                     <!-- DYNAMIC: Storage from variant -->
+                    ${product.category !== "Watch" ? `
                     <div class="spec-item" id="spec-storage">
                         <span class="spec-label">Storage:</span>
                         <span class="spec-value">${storageFromVariant}</span>
                     </div>
+` : ""}
                     
                     <!-- STATIC: Other specs from specs object (filter out RAM/Storage if present) -->
                     ${Object.entries(product.specs || {})
-                        .filter(([key]) => key !== 'RAM' && key !== 'Storage')
+                        .filter(([key]) => {
+  if (product.category === "Watch") {
+    return key !== 'RAM' && key !== 'Storage';
+  }
+  return true;
+})
                         .map(([key, value]) => `
                         <div class="spec-item">
                             <span class="spec-label">${key}:</span>

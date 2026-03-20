@@ -1,0 +1,75 @@
+{
+  "id": "mackbook-air-15inch",
+  "name": "Macbook Air",
+  "brand": "Apple",
+  "category": "Laptop",
+  "image": "assets/images/laptops/macbook-air-starlight.jpg",
+  "colors": [
+    {
+      "name": "Sky Blue",
+      "images": [
+        "assets/images/laptops/macbook-air-skyblue.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/laptops/macbook-air-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Starlight",
+      "images": [
+        "assets/images/laptops/macbook-air-starlight.jpg"
+        
+      ]
+    },
+    {
+      "name": "Midnight",
+      "images": [
+        "assets/images/laptops/macbook-air-midnight.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "512-16",
+      "ram": "16 GB",
+      "storage": "512 GB",
+      "price": 150938,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "1 TB-16",
+      "ram": "16 GB",
+      "storage": "1 TB",
+      "price": 175426,
+      "discount": 6,
+      "available": true
+    },
+    {
+      "id": "1 TB-24",
+      "ram": "24 GB",
+      "storage": "1 TB",
+      "price": 200978,
+      "discount": 8,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Starlight",
+    "variant": "512-16"
+  },
+  "specs": {
+    "Processor": "Apple M5 chip",
+    "Graphics": "10-core GPU",
+    "Display Size": "15-inch",
+    "OS": "macOS"
+    
+  },
+  "status": "active"
+}

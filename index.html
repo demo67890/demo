@@ -7,8 +7,250 @@
     <meta name="description" content="Latest smartphones available at Banashree Mobile, Main Road Malkangiri. Vivo, iPhone, Samsung, Oppo and more. Best prices and genuine products.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ===== LOGO STYLES ===== */
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .logo span {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            background: linear-gradient(135deg, #0f172a, #61dac2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 1024px) {
+            .logo img {
+                height: 28px;
+            }
+            .logo span {
+                font-size: 18px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .logo a {
+                gap: 6px;
+            }
+            .logo img {
+                height: 24px;
+            }
+            .logo span {
+                font-size: 16px;
+            }
+        }
+
+        /* Very Small Mobile */
+        @media (max-width: 480px) {
+            .logo img {
+                height: 20px;
+            }
+            .logo span {
+                font-size: 14px;
+            }
+        }
+
+        /* ===== NEW INFO SECTION STYLES (FINANCE + PAYMENT + DOCUMENTS) ===== */
+        .info-section {
+            padding: 40px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            margin: 30px 0;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-block {
+            margin-bottom: 40px;
+        }
+
+        .info-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .info-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #10b493, #61dac2);
+            border-radius: 3px;
+        }
+
+        /* ✅ FIXED: Finance Logos - 3x3 Grid on Mobile */
+        .finance-logos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 10px 0;
+        }
+
+        .logo-item {
+            width: 100%;
+            height: 80px;
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: #10b493;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 77px;
+            object-fit: contain;
+        }
+
+        /* Payment & Documents Grid - 2x2 on Mobile */
+        .payment-grid,
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .payment-card,
+        .document-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .payment-card:hover,
+        .document-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: #10b493;
+        }
+
+        .payment-icon,
+        .document-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .payment-card p,
+        .document-card p {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        /* Tablet Styles - Finance 3 columns, Payment/Docs 2 columns */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .finance-logos {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .payment-grid,
+            .documents-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .info-section {
+                padding: 50px 0;
+            }
+
+            .info-title {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            /* Finance Logos - 5 columns on Desktop */
+            .finance-logos {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 20px;
+            }
+
+            .logo-item {
+                height: 90px;
+            }
+
+            /* Payment & Documents - 4 columns on Desktop */
+            .payment-grid,
+            .documents-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .payment-card,
+            .document-card {
+                padding: 25px 15px;
+            }
+
+            .payment-icon,
+            .document-icon {
+                font-size: 42px;
+            }
+
+            .payment-card p,
+            .document-card p {
+                font-size: 15px;
+            }
+        }
+
+        /* Spacing between blocks */
+        .info-block + .info-block {
+            margin-top: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .info-block + .info-block {
+                margin-top: 50px;
+            }
+        }
+    </style>
 </head>
-<body>
+<!-- ✅ ADDED: data-category for typing animation -->
+<body data-category="phone">
     <!-- 📌 STICKY TOP AREA - FIXED ON ALL PAGES -->
     <header class="sticky-header">
         <!-- TOP INFO BAR -->
@@ -16,7 +258,7 @@
             <div class="container">
                 <span class="shop-name">Banashree Mobile</span>
                 <span class="separator">|</span>
-                <span class="shop-address">Jaydev vihar, Bhubaneswar , 753013</span>
+                <span class="shop-address">Jaydev vihar, Bhubaneswar , 751013</span>
             </div>
         </div>
         
@@ -27,13 +269,14 @@
                     <!-- LEFT: MENU ICON + HOME BUTTON -->
                     <div class="left-nav">
                         <div class="menu-icon" id="menuToggle">☰</div>
-                        
-                        
                     </div>
                     
-                    <!-- CENTER: LOGO/SHOP NAME -->
+                    <!-- CENTER: LOGO/SHOP NAME (WITH LOGO) -->
                     <div class="logo">
-                        <a href="">BANASHREE MOBILE</a>
+                        <a href="index.html">
+                            <img src="assets/images/main-logo.png" alt="">
+                            <span>BANASHREE MOBILE</span>
+                        </a>
                     </div>
                     
                     <!-- RIGHT: STABLE SEARCH WRAPPER + CALL ICON -->
@@ -42,7 +285,6 @@
                             <input type="text" id="searchInput" placeholder="Search phones (Vivo, iPhone, Galaxy...)" autocomplete="off">
                             <span class="search-submit">🔍</span>
                         </div>
-                       
                     </div>
                 </div>
             </div>
@@ -59,17 +301,15 @@
             <a href="about.html" class="menu-item">
                 <span>📋</span> About
             </a>
-            
-            </a>
         </div>
     </header>
 
     <main>
         <!-- 🏪 SHOP BANNER SECTION - REPLACED WITH STORE LOCATIONS SLIDER -->
-        <section class="store-locations-section">
+        <section class="store-location-section">
             <div class="container">
                 <h2 class="section-title">📍 Our Store Locations</h2>
-                <div class="store-locations-container" id="storeLocationsContainer">
+                <div class="store-location-container" id="storeLocationsContainer">
                     <!-- Store locations will be loaded dynamically by main.js -->
                     <div class="new-launch-loader">
                         <div class="spinner"></div>
@@ -176,6 +416,75 @@
             </div>
         </section>
 
+        <!-- ===== NEW SECTION: FINANCE + PAYMENT + DOCUMENTS ===== -->
+        <section class="info-section">
+            <div class="container">
+                
+                <!-- Finance Options - 3x3 Grid on Mobile -->
+                <div class="info-block">
+                    <h2 class="info-title">💰 Finance Options</h2>
+                    <div class="finance-logos">
+                        <div class="logo-item"><img src="assets/images/finance-logo/babaj-finance.png" alt="Bajaj Finance" onerror="this.src='https://via.placeholder.com/100x40?text=Bajaj'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/idfc-finance.png" alt="IDFC Finance" onerror="this.src='https://via.placeholder.com/100x40?text=IDFC'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/hbd-finance.png" alt="HDB Finance" onerror="this.src='https://via.placeholder.com/100x40?text=HDB'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/home-credit.png" alt="Home Credit" onerror="this.src='https://via.placeholder.com/100x40?text=Home+Credit'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/dmi-finance.png" alt="DMI Finance" onerror="this.src='https://via.placeholder.com/100x40?text=DMI'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/mi-finance.png" alt="Mi Finance" onerror="this.src='https://via.placeholder.com/100x40?text=Mi'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/tvs-credit.png" alt="TVS Credit" onerror="this.src='https://via.placeholder.com/100x40?text=TVS'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/poonawalla-finance.png" alt="Poonawalla Finance" onerror="this.src='https://via.placeholder.com/100x40?text=Poonawalla'"></div>
+                        <div class="logo-item"><img src="assets/images/finance-logo/chola-finance.png" alt="Cholamandalam Finance" onerror="this.src='https://via.placeholder.com/100x40?text=Chola'"></div>
+                    </div>
+                </div>
+
+                <!-- Payment Options - 2x2 Grid on Mobile -->
+                <div class="info-block">
+                    <h2 class="info-title">💳 Payment Options</h2>
+                    <div class="payment-grid">
+                        <div class="payment-card">
+                            <div class="payment-icon">💵</div>
+                            <p>Cash</p>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">📱</div>
+                            <p>UPI</p>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">🏦</div>
+                            <p>Bank Transfer</p>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">💳</div>
+                            <p>Credit Card</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents Required - 2x2 Grid on Mobile -->
+                <div class="info-block">
+                    <h2 class="info-title">📄 Documents Required</h2>
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-icon">🆔</div>
+                            <p>Aadhaar Card</p>
+                        </div>
+                        <div class="document-card">
+                            <div class="document-icon">📇</div>
+                            <p>PAN Card</p>
+                        </div>
+                        <div class="document-card">
+                            <div class="document-icon">👆</div>
+                            <p>Fingerprint</p>
+                        </div>
+                        <div class="document-card">
+                            <div class="document-icon">🏧</div>
+                            <p>Bank Details</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- 📍 SHOP INFO + MAP -->
         <section class="shop-info">
             <div class="container">
@@ -184,7 +493,7 @@
                     <p>Jaydev vihar , 
 	               near jaydev viahr trafic
 	               entrancce of bujipatnayak collage road
-	              bhubaneswar , 753013</p>
+	              bhubaneswar , 751013</p>
                     <p>⏰ Open: 09:00 AM - 10:00 PM (All Days)</p>
                     <p>📞 +91 9777966677  📞 +91 9776666877 </p>
                     <p>📞 +91 9583000060  📞 +91 9583000030</p>
@@ -221,85 +530,85 @@
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-    <a href="https://youtube.com/@banashree_mobile?si=lWjVxz-QcIJL7MuC" target="_blank" rel="noopener noreferrer" style="color: #d83434; font-size: 24px; text-decoration: none; transition: transform 0.2s;">
-        <i class="fab fa-youtube"></i>
-    </a>
-</div>
+                        <a href="https://youtube.com/@banashree_mobile?si=lWjVxz-QcIJL7MuC" target="_blank" rel="noopener noreferrer" style="color: #d83434; font-size: 24px; text-decoration: none; transition: transform 0.2s;">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
-    © 2026 Banashree Mobile. All rights reserved.
-    <br>
-    Developed with <span class="heart">❤️</span> by <strong class="developer-name">Subhankar Bairagi</strong>
-</div>
+                © 2026 Banashree Mobile. All rights reserved.
+                <br>
+                Developed with <span class="heart">❤️</span> by <strong class="developer-name">Subhankar Bairagi</strong>
+            </div>
 
-<style>
-    /* Copyright section styling */
-    .copyright {
-        text-align: center;
-        padding: 20px 0 10px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 14px;
-        line-height: 1.8;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 20px;
-    }
+            <style>
+                /* Copyright section styling */
+                .copyright {
+                    text-align: center;
+                    padding: 20px 0 10px;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 14px;
+                    line-height: 1.8;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    margin-top: 20px;
+                }
 
-    /* Heart styling with animation */
-    .heart {
-        display: inline-block;
-        color: #ff4d4d;
-        font-size: 16px;
-        animation: heartbeat 1.5s ease-in-out infinite;
-        margin: 0 2px;
-    }
+                /* Heart styling with animation */
+                .heart {
+                    display: inline-block;
+                    color: #ff4d4d;
+                    font-size: 16px;
+                    animation: heartbeat 1.5s ease-in-out infinite;
+                    margin: 0 2px;
+                }
 
-    /* Developer name styling */
-    .developer-name {
-        color: #61dac2;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-        transition: all 0.3s ease;
-        cursor: default;
-    }
+                /* Developer name styling */
+                .developer-name {
+                    color: #61dac2;
+                    font-weight: 600;
+                    letter-spacing: 0.3px;
+                    transition: all 0.3s ease;
+                    cursor: default;
+                }
 
-    /* Hover effect on name */
-    .developer-name:hover {
-        color: #4ec9b0;
-        text-shadow: 0 0 10px rgba(97, 218, 194, 0.5);
-    }
+                /* Hover effect on name */
+                .developer-name:hover {
+                    color: #4ec9b0;
+                    text-shadow: 0 0 10px rgba(97, 218, 194, 0.5);
+                }
 
-    /* Heartbeat animation */
-    @keyframes heartbeat {
-        0%, 100% {
-            transform: scale(1);
-        }
-        25% {
-            transform: scale(1.1);
-        }
-        35% {
-            transform: scale(1);
-        }
-        45% {
-            transform: scale(1.08);
-        }
-        55% {
-            transform: scale(1);
-        }
-    }
+                /* Heartbeat animation */
+                @keyframes heartbeat {
+                    0%, 100% {
+                        transform: scale(1);
+                    }
+                    25% {
+                        transform: scale(1.1);
+                    }
+                    35% {
+                        transform: scale(1);
+                    }
+                    45% {
+                        transform: scale(1.08);
+                    }
+                    55% {
+                        transform: scale(1);
+                    }
+                }
 
-    /* Responsive for mobile */
-    @media (max-width: 480px) {
-        .copyright {
-            font-size: 12px;
-            padding: 15px 0 5px;
-        }
-        
-        .heart {
-            font-size: 14px;
-        }
-    }
-</style>
+                /* Responsive for mobile */
+                @media (max-width: 480px) {
+                    .copyright {
+                        font-size: 12px;
+                        padding: 15px 0 5px;
+                    }
+                    
+                    .heart {
+                        font-size: 14px;
+                    }
+                }
+            </style>
         </div>
     </footer>
 

@@ -1,0 +1,69 @@
+{
+  "id": "ipad-apple-11-gen",
+  "name": "ipad Apple 11 Gen",
+  "brand": "Apple",
+  "category": "Tablet",
+  "image": "assets/images/tablets/ipad-apple-11-gen-pink.jpg",
+  "colors": [
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/tablets/ipad-apple-11-gen-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Blue",
+      "images": [
+        "assets/images/tablets/ipad-apple-11-gen-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Yellow",
+      "images": [
+        "assets/images/tablets/ipad-apple-11-gen-yellow.jpg"
+       
+      ]
+    },
+    {
+      "name": "Pink",
+      "images": [
+        "assets/images/tablets/ipad-apple-11-gen-pink.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 36354,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "256-6",
+      "ram": "6 GB",
+      "storage": "256 GB",
+      "price": 47263,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Pink",
+    "variant": "128-6"
+  },
+  "specs": {
+    "Processor": "A16 chip",
+    "Front Camera": "12 MP",
+    "Back Camera": "12 MP",
+    "Battery": "7700 mAh",
+    "Display Size": "11-inch",
+    "Conectivity": "Wi-Fi"
+    
+  },
+  "status": "active"
+}

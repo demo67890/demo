@@ -1,0 +1,60 @@
+{
+  "id": "apple-watch-series-11-1",
+  "name": "Apple Watch Series-11",
+  "brand": "Apple",
+  "category": "Watch",
+  "image": "assets/images/watch/apple-watch-series-11-rosegold.jpg",
+  "colors": [
+    {
+      "name": "Rose Gold",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-rosegold.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-silver.jpg"
+       
+      ]
+    },
+    {
+      "name": "Space Grey",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-grey.jpg"
+        
+      ]
+    },
+    {
+      "name": "Jet Black",
+      "images": [
+        "assets/images/watch/apple-watch-series-11-black.jpg"
+       
+      ]
+    }
+  ],
+
+  "variants": [
+    
+    {
+      
+      "price": 49894,
+      "discount": 6,
+      "available": true
+    }
+  ],
+  
+  "default": {
+    "color": "Rose Gold"
+
+  },
+  "specs": {
+    "Water Resistance": "Yes",
+    "Size & Weight": "42 MM",
+    "Display": "OLEDs and LTPO3",
+    "Calling": "GPS"
+    
+  },
+  "status": "active"
+}

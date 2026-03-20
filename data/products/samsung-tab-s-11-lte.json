@@ -1,0 +1,55 @@
+{
+  "id": "samsung-tab-s-11-lte",
+  "name": "Samsung Tab-S11 Lte",
+  "brand": "Samsung",
+  "category": "Tablet",
+  "image": "assets/images/tablets/samsung-tab-s11-lte-grey.jpg",
+  "colors": [
+    {
+      "name": "Grey",
+      "images": [
+        "assets/images/tablets/samsung-tab-s11-lte-grey.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/tablets/samsung-tab-s11-lte-silver.jpg"
+       
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-12",
+      "ram": "12 GB",
+      "storage": "128 GB",
+      "price": 109277,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "256-12",
+      "ram": "12 GB",
+      "storage": "256 GB",
+      "price": 117894,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Grey",
+    "variant": "128-12"
+  },
+  "specs": {
+    "Processor": "MediaTek Dimensity 9400+",
+    "Front Camera": "13 MP + 8 MP",
+    "Back Camera": "12 MP",
+    "Battery": "8400 mAh",
+    "Display Size": "11-inch",
+    "Conectivity": "Wi-Fi + Cellular"
+    
+  },
+  "status": "active"
+}

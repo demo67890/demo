@@ -164,21 +164,34 @@ const DataLoader = {
         return [
             
             // Watches
-            'apple-watch-9',
-            'samsung-watch-6',
-            'noise-watch-4',
-            'boat-watch-storm',
+            'apple-watch-se-3-1',
+            'apple-watch-se-3-2',
+            'apple-watch-se-3-3',
+            'apple-watch-se-3-4',
+            'apple-watch-series-11-1',
+            'apple-watch-series-11-2',
+            'apple-watch-series-11-3',
+            'apple-watch-series-11-4',
+            'apple-watch-series-11-5',
+            'apple-watch-series-11-6',
+            "apple-watch-ultra-3",
             
             // Laptops
-            'dell-laptop-15',
-            'hp-laptop-14',
-            'lenovo-laptop-16',
-            'apple-macbook-air',
+            'mac-mini',
+            'mac-mini-silver',
+            'mackbook-air-13inch',
+            'mackbook-air-15inch',
+            'mackbook-neo',
             
             // Tablets
-            'apple-ipad-10',
-            'samsung-tab-s9',
-            'lenovo-tab-p12'
+            'ipad-apple-11-gen',
+            'redmi-pad-2-cellular',
+            'samsung-tab-s-11-ultra',
+            'redmi-pad-2',
+            'samsung-tab-A-11-lte',
+            'redmi-pad-2-pro',
+            'samsung-tab-s-11-lte'
+            
             
         ];
     },

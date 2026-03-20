@@ -1,0 +1,64 @@
+{
+  "id": "redmi-pad-2-cellular",
+  "name": "Redmi Pad-2 Cellular",
+  "brand": "Redmi",
+  "category": "Tablet",
+  "image": "assets/images/tablets/redmi-pad-2-grey.jpg",
+  "colors": [
+    
+    {
+      "name": "Blue",
+      "images": [
+        "assets/images/tablets/redmi-pad-2-blue.jpg"
+       
+      ]
+    },
+    {
+      "name": "Grey",
+      "images": [
+        "assets/images/tablets/redmi-pad-2-grey.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-4",
+      "ram": "4 GB",
+      "storage": "128 GB",
+      "price": 17525,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "128-6",
+      "ram": "6 GB",
+      "storage": "128 GB",
+      "price": 18946,
+      "discount": 5,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 21504,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Grey",
+    "variant": "128-4"
+  },
+  "specs": {
+    "Processor": "MediaTek Helio G100-Ultra",
+    "Front Camera": "5 MP",
+    "Back Camera": "8 MP",
+    "Battery": "9000 mAh",
+    "Display Size": "11-inch",
+    "Conectivity": "Wi-Fi + Cellular"
+    
+  },
+  "status": "active"
+}

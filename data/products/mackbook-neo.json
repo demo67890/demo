@@ -1,0 +1,67 @@
+{
+  "id": "mackbook-neo",
+  "name": "Macbook Neo",
+  "brand": "Apple",
+  "category": "Laptop",
+  "image": "assets/images/laptops/macbook-neo-indigo.jpg",
+  "colors": [
+    {
+      "name": "Blush",
+      "images": [
+        "assets/images/laptops/macbook-neo-blush.jpg"
+        
+      ]
+    },
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/laptops/macbook-neo-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Citrus",
+      "images": [
+        "assets/images/laptops/macbook-neo-citrus.jpg"
+        
+      ]
+    },
+    {
+      "name": "Indigo",
+      "images": [
+        "assets/images/laptops/macbook-neo-indigo.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 72813,
+      "discount": 4,
+      "available": true
+    },
+    {
+      "id": "512-8",
+      "ram": "8 GB",
+      "storage": "512",
+      "price": 85914,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Indigo",
+    "variant": "256-8"
+  },
+  "specs": {
+    "Processor": "Apple A18 Pro chip",
+    "Graphics": "5-core GPU",
+    "Display Size": "13-inch",
+    "OS": "macOS"
+    
+  },
+  "status": "active"
+}

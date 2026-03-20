@@ -1,0 +1,55 @@
+{
+  "id": "redmi-pad-2-pro",
+  "name": "Redmi Pad-2 pro",
+  "brand": "Redmi",
+  "category": "Tablet",
+  "image": "assets/images/tablets/redmi-pad-2-pro-silver.jpg",
+  "colors": [
+    {
+      "name": "Silver",
+      "images": [
+        "assets/images/tablets/redmi-pad-2-pro-silver.jpg"
+        
+      ]
+    },
+    {
+      "name": "Grey",
+      "images": [
+        "assets/images/tablets/redmi-pad-2-pro-grey.jpg"
+        
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "128-8",
+      "ram": "8 GB",
+      "storage": "128 GB",
+      "price": 28865,
+      "discount": 3,
+      "available": true
+    },
+    {
+      "id": "256-8",
+      "ram": "8 GB",
+      "storage": "256 GB",
+      "price": 32257,
+      "discount": 7,
+      "available": true
+    }
+  ],
+  "default": {
+    "color": "Silver",
+    "variant": "128-8"
+  },
+  "specs": {
+    "Processor": "Snapdragon 7s Gen 4",
+    "Front Camera": "8 MP",
+    "Back Camera": "13 MP + 8 MP",
+    "Battery": "12000 mAh",
+    "Display Size": "12.1-inch",
+    "Conectivity": "Wi-Fi + Cellular"
+    
+  },
+  "status": "active"
+}

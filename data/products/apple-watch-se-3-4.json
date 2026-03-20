@@ -1,0 +1,46 @@
+{
+  "id": "apple-watch-se-3-4",
+  "name": "Apple Watch-SE-3",
+  "brand": "Apple",
+  "category": "Watch",
+  "image": "assets/images/watch/apple-watch-SE-3-midnight.jpg",
+  "colors": [
+    {
+      "name": "Starlight",
+      "images": [
+        "assets/images/watch/apple-watch-SE-3-starlight.jpg"
+        
+      ]
+    },
+    {
+      "name": "Midnight",
+      "images": [
+        "assets/images/watch/apple-watch-SE-3-midnight.jpg"
+       
+      ]
+    }
+  ],
+
+  "variants": [
+    
+    {
+      
+      "price": 35684,
+      "discount": 5,
+      "available": true
+    }
+  ],
+  
+  "default": {
+    "color": "Midnight"
+
+  },
+  "specs": {
+    "Water Resistance": "Yes",
+    "Size & Weight": "44 MM",
+    "Display": "OLED and LTPO",
+    "Calling": "GPS + Cellular"
+    
+  },
+  "status": "active"
+}
