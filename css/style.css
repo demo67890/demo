@@ -3150,6 +3150,62 @@ footer {
     display: none;
 }
 
+/* ===== ✅ EDGE SWIPE PREVENTION CSS ===== */
+/* Disable horizontal swipe from edges - vertical scroll still works */
+html, body {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
+    width: 100%;
+    position: relative;
+}
+
+/* Prevent horizontal gestures on all elements */
+* {
+    touch-action: pan-y;
+    box-sizing: border-box;
+}
+
+/* Fix body margins */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Images & elements fix */
+img, video, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent layout overflow */
+.container, 
+.wrapper, 
+.main,
+.row,
+[class*="wrapper"],
+[class*="container"] {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure all horizontal scrollable areas still work */
+.category-wrapper,
+.category-box-container,
+.trending-wrapper,
+.finance-logos {
+    overflow-x: auto;
+    touch-action: pan-x; /* Allow horizontal scroll only on these elements */
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-wrapper::-webkit-scrollbar,
+.category-box-container::-webkit-scrollbar,
+.trending-wrapper::-webkit-scrollbar,
+.finance-logos::-webkit-scrollbar {
+    display: none;
+}
+
 /* ===== OPTIONAL: MORE PINK VERSION (Flipkart exact) ===== */
 /* 
 body {

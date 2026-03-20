@@ -13,12 +13,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', async function() {
-    // Prevent swipe back navigation (only edge swipe)
-    preventSwipeBack();
-    
-    // Initialize typing animation for search (must come before initSearch)
-    initTypingPlaceholder();
-    
     // Initialize all features
     initSearch();
     initBottomNav();
@@ -121,38 +115,46 @@ const categoryBoxData = [
     
 ];
 
-// ===== ✅ FIXED: PREVENT ONLY LEFT EDGE SWIPE BACK (BACK BUTTONS WORK PERFECTLY) =====
+// ===== ✅ FIXED: EDGE SWIPE PREVENTION (BACK BUTTONS WORK NORMALLY) =====
 function preventSwipeBack() {
     let touchStartX = 0;
     let touchStartY = 0;
-    let touchStartTime = 0;
+    let isEdgeSwipe = false;
     
     document.addEventListener('touchstart', function(e) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
-        touchStartTime = Date.now();
+        
+        // Detect if touch started from left edge (0-30px)
+        if (touchStartX < 30) {
+            isEdgeSwipe = true;
+        } else {
+            isEdgeSwipe = false;
+        }
     }, { passive: true });
     
-    document.addEventListener('touchend', function(e) {
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-        const touchEndTime = Date.now();
+    document.addEventListener('touchmove', function(e) {
+        if (!isEdgeSwipe) return;
         
-        const diffX = touchEndX - touchStartX;
-        const diffY = Math.abs(touchEndY - touchStartY);
-        const timeDiff = touchEndTime - touchStartTime;
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
         
-        // अगर fast swipe है (under 300ms) और horizontal और left edge से
-        if (timeDiff < 300 && diffX > 50 && diffY < 30 && touchStartX < 30) {
-            // Left edge se right swipe - इसे block करो
+        const diffX = Math.abs(currentX - touchStartX);
+        const diffY = Math.abs(currentY - touchStartY);
+        
+        // If horizontal swipe from edge - block it
+        if (diffX > diffY && diffX > 15) {
             e.preventDefault();
-            return false;
         }
     }, { passive: false });
     
-    // ⭐ IMPORTANT: history.pushState को हटाया - इसी से back buttons 2 बार लग रहे थे
-    // Back buttons normal काम करेंगे
+    document.addEventListener('touchend', function(e) {
+        isEdgeSwipe = false;
+    }, { passive: true });
 }
+
+// Call this function
+preventSwipeBack();
 
 // ===== ✅ UPDATED: TYPING ANIMATION FOR SEARCH PLACEHOLDER (CATEGORY BASED) =====
 function initTypingPlaceholder() {
@@ -165,9 +167,9 @@ function initTypingPlaceholder() {
     // Category-based word lists
     const searchData = {
         phone: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola', 'Nothing', 'Pixel', 'Realme'],
-        laptop: ['Mac Mini', 'Macbook Air', 'Macbook Neo', 'HP'],
-        watch: ['Apple'],
-        tablet: ['iPad', 'Samsung Tab', 'Redmi Pad'],
+        laptop: ['Dell', 'HP', 'Lenovo', 'Asus', 'Acer', 'MSI', 'Apple', 'Microsoft'],
+        watch: ['Noise', 'boAt', 'Fire-Boltt', 'Apple', 'Samsung', 'Garmin', 'Fossil'],
+        tablet: ['iPad', 'Samsung Tab', 'Lenovo Tab', 'Xiaomi Pad', 'Realme Pad'],
         product: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola']
     };
 
@@ -233,6 +235,11 @@ function initTypingPlaceholder() {
     // Start animation
     typeEffect();
 }
+
+// Call this function after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    initTypingPlaceholder();
+});
 
 // ===== LOAD CATEGORY BOXES =====
 function loadCategoryBoxes() {
@@ -318,7 +325,6 @@ async function loadStoreLocations() {
         document.querySelector('.store-location-card')?.addEventListener('click', function() {
             const location = storeLocations[currentStoreIndex];
             if (location && location.map) {
-                // Try to extract place ID or open Google Maps
                 const mapUrl = location.map.includes('embed') 
                     ? location.map.replace('/embed?', '/maps?') 
                     : location.map;
@@ -1658,7 +1664,7 @@ function renderProductDetail(product) {
                 </div>
             </div>
             
-            ${product.category !=="Watch" && product.variants && product.variants.length > 0 ? `
+            ${product.category !== "Watch" && product.variants && product.variants.length > 0 ? `
                 <div class="variant-section">
                     <h4>Select Storage & RAM</h4>
                     <div class="variant-grid">
@@ -1708,7 +1714,7 @@ function renderProductDetail(product) {
                         <span class="spec-label">RAM:</span>
                         <span class="spec-value">${ramFromVariant}</span>
                     </div>
-` : ""}
+                    ` : ""}
                     
                     <!-- DYNAMIC: Storage from variant -->
                     ${product.category !== "Watch" ? `
@@ -1716,16 +1722,16 @@ function renderProductDetail(product) {
                         <span class="spec-label">Storage:</span>
                         <span class="spec-value">${storageFromVariant}</span>
                     </div>
-` : ""}
+                    ` : ""}
                     
                     <!-- STATIC: Other specs from specs object (filter out RAM/Storage if present) -->
                     ${Object.entries(product.specs || {})
                         .filter(([key]) => {
-  if (product.category === "Watch") {
-    return key !== 'RAM' && key !== 'Storage';
-  }
-  return true;
-})
+                            if (product.category === "Watch") {
+                                return key !== 'RAM' && key !== 'Storage';
+                            }
+                            return true;
+                        })
                         .map(([key, value]) => `
                         <div class="spec-item">
                             <span class="spec-label">${key}:</span>
