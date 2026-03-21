@@ -142,7 +142,7 @@ body {
 .category-box-card,
 .nav-btn,
 .new-launch-card,
-.store-location-card {
+.store-locations-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -605,11 +605,11 @@ body {
 }
 
 /* ===== STORE LOCATIONS SLIDER ===== */
-.store-location-section {
+.store-locations-section {
     margin: 25px 0 30px;
 }
 
-.store-location-container {
+.store-locations-container {
     position: relative;
     width: 100%;
     min-height: 300px;
@@ -617,13 +617,13 @@ body {
     overflow: hidden;
 }
 
-.store-location-slider {
+.store-locations-slider {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.store-location-card {
+.store-locations-card {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -637,11 +637,11 @@ body {
     border: none;
 }
 
-.store-location-card:active {
+.store-locations-card:active {
     transform: scale(0.99);
 }
 
-.store-location-card:hover {
+.store-locations-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
 }
@@ -694,14 +694,14 @@ body {
 }
 
 /* Dots indicator for store locations */
-.store-location-dots {
+.store-locations-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 15px;
 }
 
-.store-location-dot {
+.store-locations-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -710,7 +710,7 @@ body {
     transition: all 0.2s ease;
 }
 
-.store-location-dot.active {
+.store-locations-dot.active {
     width: 24px;
     background: #0f172a;
     border-radius: 20px;
@@ -718,7 +718,7 @@ body {
 
 /* Responsive for store locations */
 @media (min-width: 768px) {
-    .store-location-card {
+    .store-locations-card {
         height: 350px;
     }
     .store-map {
@@ -733,7 +733,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .store-location-card {
+    .store-locations-card {
         height: 280px;
     }
     .store-map {
@@ -893,7 +893,7 @@ body {
 .product-card,
 .trending-card,
 .new-launch-card,
-.store-location-card,
+.store-locations-card,
 .product-detail,
 .feature-item {
     background: #ffffff;
@@ -908,7 +908,7 @@ body {
 .product-card:hover,
 .trending-card:hover,
 .new-launch-card:hover,
-.store-location-card:hover {
+.store-locations-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
 }
@@ -2532,7 +2532,7 @@ body.product-details-page .spec-value {
     box-shadow: 0 12px 30px rgba(0,0,0,0.05);
     overflow: hidden;
     background: white;
-    padding: 8px;
+    padding: 10px;
 }
 
 .map-grid {
@@ -2795,7 +2795,7 @@ footer {
     }
     
     /* Store locations mobile */
-    .store-location-card {
+    .store-locations-card {
         height: 300px;
     }
     .store-map {
@@ -2870,7 +2870,7 @@ footer {
     }
     
     /* Store locations small mobile */
-    .store-location-card {
+    .store-locations-card {
         height: 300px;
     }
     .store-map {
@@ -2923,7 +2923,7 @@ footer {
     }
     
     /* Store locations very small */
-    .store-location-card {
+    .store-locations-card {
         height: 260px;
     }
     .store-map {
@@ -2942,7 +2942,7 @@ footer {
     .clear-all-btn,
     body.product-details-page .color-box,
     body.product-details-page .variant-box,
-    .store-location-card {
+    .store-locations-card {
         cursor: default;
         -webkit-tap-highlight-color: transparent;
     }
@@ -2955,7 +2955,7 @@ footer {
     .clear-all-btn:active,
     body.product-details-page .color-box:active,
     body.product-details-page .variant-box:active,
-    .store-location-card:active {
+    .store-locations-card:active {
         opacity: 0.8;
     }
 }
@@ -3009,7 +3009,7 @@ footer {
     }
     
     /* Store locations desktop */
-    .store-location-card {
+    .store-locations-card {
         height: 350px;
     }
     .store-map {
@@ -3045,7 +3045,7 @@ footer {
     }
     
     /* Store locations tablet */
-    .store-location-card {
+    .store-locations-card {
         height: 320px;
     }
 }
@@ -3076,7 +3076,7 @@ footer {
     }
     
     /* Store locations dark mode */
-    .store-location-card {
+    .store-locations-card {
         background: white !important;
     }
     .store-name {
@@ -3093,7 +3093,7 @@ footer {
     .category-btn:hover,
     .trending-card:hover,
     .new-launch-card:hover,
-    .store-location-card:hover,
+    .store-locations-card:hover,
     body.product-details-page .color-box:hover,
     body.product-details-page .variant-box:hover {
         transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3150,20 +3150,13 @@ footer {
     display: none;
 }
 
-/* ===== ✅ EDGE SWIPE PREVENTION CSS ===== */
+/* ===== ✅ FIXED: EDGE SWIPE PREVENTION (ONLY EDGE SWIPES BLOCKED, SCROLL WORKS) ===== */
 /* Disable horizontal swipe from edges - vertical scroll still works */
 html, body {
     overflow-x: hidden;
     overscroll-behavior-x: none;
-    touch-action: pan-y;
     width: 100%;
     position: relative;
-}
-
-/* Prevent horizontal gestures on all elements */
-* {
-    touch-action: pan-y;
-    box-sizing: border-box;
 }
 
 /* Fix body margins */
@@ -3189,14 +3182,14 @@ img, video, canvas, iframe {
     overflow-x: hidden;
 }
 
-/* Ensure all horizontal scrollable areas still work */
+/* ✅ CRITICAL: Allow horizontal scroll on these elements (categories, etc.) */
 .category-wrapper,
 .category-box-container,
 .trending-wrapper,
 .finance-logos {
     overflow-x: auto;
-    touch-action: pan-x; /* Allow horizontal scroll only on these elements */
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 .category-wrapper::-webkit-scrollbar,
