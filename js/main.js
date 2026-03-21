@@ -293,7 +293,7 @@ async function loadStoreLocations() {
     container.innerHTML = '<div class="new-launch-loader"><div class="spinner"></div></div>';
 
     try {
-        const response = await fetch('data/store-locations.json');
+        const response = await fetch('data/store-location.json');
         if (!response.ok) throw new Error('Failed to load store locations');
         storeLocations = await response.json();
         
@@ -308,10 +308,10 @@ async function loadStoreLocations() {
         currentStoreIndex = 0;
 
         const sliderHTML = `
-            <div class="store-locations-slider" id="storeLocationsSlider">
+            <div class="store-location-slider" id="storeLocationsSlider">
                 ${renderStoreCard(0)}
             </div>
-            ${storeTotal > 1 ? '<div class="store-locations-dots" id="storeLocationsDots"></div>' : ''}
+            ${storeTotal > 1 ? '<div class="store-location-dots" id="storeLocationsDots"></div>' : ''}
         `;
 
         container.innerHTML = sliderHTML;
@@ -322,7 +322,7 @@ async function loadStoreLocations() {
         }
 
         // Click handler to open map
-        document.querySelector('.store-locations-card')?.addEventListener('click', function() {
+        document.querySelector('.store-location-card')?.addEventListener('click', function() {
             const location = storeLocations[currentStoreIndex];
             if (location && location.map) {
                 const mapUrl = location.map.includes('embed') 
@@ -343,7 +343,7 @@ function renderStoreCard(index) {
     if (!location) return '';
 
     return `
-        <div class="store-locations-card" data-index="${index}">
+        <div class="store-location-card" data-index="${index}">
             <div class="store-map">
                 <iframe src="${location.map}" 
                         width="100%" 
@@ -368,11 +368,11 @@ function createStoreDots() {
 
     let dotsHTML = '';
     for (let i = 0; i < storeTotal; i++) {
-        dotsHTML += `<span class="store-locations-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>`;
+        dotsHTML += `<span class="store-location-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>`;
     }
     dotsContainer.innerHTML = dotsHTML;
 
-    document.querySelectorAll('.store-locations-dot').forEach(dot => {
+    document.querySelectorAll('.store-location-dot').forEach(dot => {
         dot.addEventListener('click', function() {
             const index = parseInt(this.dataset.index);
             if (!isNaN(index) && index !== currentStoreIndex) {
@@ -395,7 +395,7 @@ function goToStoreSlide(index) {
         slider.innerHTML = renderStoreCard(index);
         slider.style.opacity = '1';
 
-        document.querySelectorAll('.store-locations-dot').forEach((dot, i) => {
+        document.querySelectorAll('.store-location-dot').forEach((dot, i) => {
             if (i === index) {
                 dot.classList.add('active');
             } else {
@@ -404,7 +404,7 @@ function goToStoreSlide(index) {
         });
 
         // Reattach click handler
-        document.querySelector('.store-locations-card')?.addEventListener('click', function() {
+        document.querySelector('.store-location-card')?.addEventListener('click', function() {
             const location = storeLocations[currentStoreIndex];
             if (location && location.map) {
                 const mapUrl = location.map.includes('embed') 
@@ -608,13 +608,13 @@ document.addEventListener('mouseout', function(e) {
 
 // Mouse/Touch pause/resume for store slider
 document.addEventListener('mouseover', function(e) {
-    if (e.target.closest('.store-locations-card')) {
+    if (e.target.closest('.store-location-card')) {
         stopStoreSlider();
     }
 });
 
 document.addEventListener('mouseout', function(e) {
-    if (e.target.closest('.store-locations-card') && storeTotal > 1) {
+    if (e.target.closest('.store-location-card') && storeTotal > 1) {
         startStoreSlider();
     }
 });

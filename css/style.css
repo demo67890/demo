@@ -2871,10 +2871,10 @@ footer {
     
     /* Store locations small mobile */
     .store-location-card {
-        height: 270px;
+        height: 300px;
     }
     .store-map {
-        height: 160px;
+        height: 150px;
     }
 }
 
