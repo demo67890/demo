@@ -167,9 +167,9 @@ function initTypingPlaceholder() {
     // Category-based word lists
     const searchData = {
         phone: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola', 'Nothing', 'Pixel', 'Realme'],
-        laptop: ['Apple', 'Macbook-air', 'Macbook-neo', 'Mac-mini', 'Apple'],
-        watch: [ 'Apple'],
-        tablet: ['iPad', 'Samsung Tab', 'Redmi Tab'],
+        laptop: ['Dell', 'HP', 'Lenovo', 'Asus', 'Acer', 'MSI', 'Apple', 'Microsoft'],
+        watch: ['Noise', 'boAt', 'Fire-Boltt', 'Apple', 'Samsung', 'Garmin', 'Fossil'],
+        tablet: ['iPad', 'Samsung Tab', 'Lenovo Tab', 'Xiaomi Pad', 'Realme Pad'],
         product: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola']
     };
 
@@ -717,7 +717,7 @@ function initSearch() {
     });
 }
 
-// ===== ✅ FIXED: TOUCH GESTURES (NO SWIPE BACK ON PRODUCT PAGE) =====
+// ===== ✅ FIXED: TOUCH GESTURES (Only product.html swipe back disabled) =====
 function initTouchGestures() {
     let touchStartX = 0, touchEndX = 0;
     
@@ -725,16 +725,17 @@ function initTouchGestures() {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
     
-    // ✅ FIX: Completely disable swipe back on product page
-    if (!window.location.pathname.includes('product.html')) {
-        document.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const diff = touchEndX - touchStartX;
+    document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        
+        // ✅ FIX: Sirf product.html par swipe back disable, baki sab pages pe normal
+        if (!window.location.pathname.includes('product.html')) {
             if (Math.abs(diff) > 100 && diff > 0) {
                 history.back();
             }
-        }, { passive: true });
-    }
+        }
+    }, { passive: true });
     
     let touchStartY = 0;
     document.addEventListener('touchstart', (e) => {
