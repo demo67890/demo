@@ -7,7 +7,7 @@
  * AND FIXED TRENDING SECTION WITH DISCOUNT PRICE
  * AND STORE LOCATIONS SLIDER
  * AND TYPING ANIMATION FOR SEARCH PLACEHOLDER (CATEGORY BASED)
- * AND SWIPE BACK PREVENTION (FIXED - ONLY EDGE SWIPE, BACK BUTTONS WORK)
+ * AND SWIPE BACK PREVENTION (FIXED - DISABLED ON ALL PAGES)
  * AND FIXED SORTING FUNCTIONALITY (NOW WORKS FIRST TIME)
  * 🚫 AUTO-SCROLL REMOVED - Only manual scroll
  */
@@ -710,7 +710,7 @@ function initSearch() {
     });
 }
 
-// ===== ✅ FIXED: TOUCH GESTURES (Only product.html swipe back disabled) =====
+// ===== ✅ FIXED: TOUCH GESTURES (Swipe back disabled on ALL pages) =====
 function initTouchGestures() {
     let touchStartX = 0, touchEndX = 0;
     
@@ -722,9 +722,11 @@ function initTouchGestures() {
         touchEndX = e.changedTouches[0].screenX;
         const diff = touchEndX - touchStartX;
         
-        // ✅ FIX: Sirf product.html par swipe back disable, baki sab pages pe normal
-        if (Math.abs(diff) > 100 && diff > 0 && !window.location.pathname.includes('product.html')) {
-            history.back();
+        // ✅ FIX: Swipe back completely disabled on ALL pages
+        // कोई भी swipe back नहीं होगा
+        if (Math.abs(diff) > 100 && diff > 0) {
+            // Swipe detected but disabled - do nothing
+            console.log('Swipe detected but disabled on all pages');
         }
     }, { passive: true });
     
