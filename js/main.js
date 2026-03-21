@@ -13,6 +13,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', async function() {
+    // Prevent swipe back navigation (only edge swipe)
+    preventSwipeBack();
+    
+    // Initialize typing animation for search (must come before initSearch)
+    initTypingPlaceholder();
+    
     // Initialize all features
     initSearch();
     initBottomNav();
@@ -115,46 +121,38 @@ const categoryBoxData = [
     
 ];
 
-// ===== ✅ FIXED: EDGE SWIPE PREVENTION (BACK BUTTONS WORK NORMALLY) =====
+// ===== ✅ FIXED: PREVENT ONLY LEFT EDGE SWIPE BACK (BACK BUTTONS WORK PERFECTLY) =====
 function preventSwipeBack() {
     let touchStartX = 0;
     let touchStartY = 0;
-    let isEdgeSwipe = false;
+    let touchStartTime = 0;
     
     document.addEventListener('touchstart', function(e) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
-        
-        // Detect if touch started from left edge (0-30px)
-        if (touchStartX < 30) {
-            isEdgeSwipe = true;
-        } else {
-            isEdgeSwipe = false;
-        }
+        touchStartTime = Date.now();
     }, { passive: true });
     
-    document.addEventListener('touchmove', function(e) {
-        if (!isEdgeSwipe) return;
+    document.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const touchEndTime = Date.now();
         
-        const currentX = e.touches[0].clientX;
-        const currentY = e.touches[0].clientY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = Math.abs(touchEndY - touchStartY);
+        const timeDiff = touchEndTime - touchStartTime;
         
-        const diffX = Math.abs(currentX - touchStartX);
-        const diffY = Math.abs(currentY - touchStartY);
-        
-        // If horizontal swipe from edge - block it
-        if (diffX > diffY && diffX > 15) {
+        // अगर fast swipe है (under 300ms) और horizontal और left edge से
+        if (timeDiff < 300 && diffX > 50 && diffY < 30 && touchStartX < 30) {
+            // Left edge se right swipe - इसे block करो
             e.preventDefault();
+            return false;
         }
     }, { passive: false });
     
-    document.addEventListener('touchend', function(e) {
-        isEdgeSwipe = false;
-    }, { passive: true });
+    // ⭐ IMPORTANT: history.pushState को हटाया - इसी से back buttons 2 बार लग रहे थे
+    // Back buttons normal काम करेंगे
 }
-
-// Call this function
-preventSwipeBack();
 
 // ===== ✅ UPDATED: TYPING ANIMATION FOR SEARCH PLACEHOLDER (CATEGORY BASED) =====
 function initTypingPlaceholder() {
@@ -235,11 +233,6 @@ function initTypingPlaceholder() {
     // Start animation
     typeEffect();
 }
-
-// Call this function after DOM loads
-document.addEventListener('DOMContentLoaded', function() {
-    initTypingPlaceholder();
-});
 
 // ===== LOAD CATEGORY BOXES =====
 function loadCategoryBoxes() {
@@ -730,10 +723,8 @@ function initTouchGestures() {
         const diff = touchEndX - touchStartX;
         
         // ✅ FIX: Sirf product.html par swipe back disable, baki sab pages pe normal
-        if (!window.location.pathname.includes('product.html')) {
-            if (Math.abs(diff) > 100 && diff > 0) {
-                history.back();
-            }
+        if (Math.abs(diff) > 100 && diff > 0 && !window.location.pathname.includes('product.html')) {
+            history.back();
         }
     }, { passive: true });
     
