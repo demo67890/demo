@@ -165,9 +165,9 @@ function initTypingPlaceholder() {
     // Category-based word lists
     const searchData = {
         phone: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola', 'Nothing', 'Pixel', 'Realme'],
-        laptop: ['Dell', 'HP', 'Lenovo', 'Asus', 'Acer', 'MSI', 'Apple', 'Microsoft'],
-        watch: ['Noise', 'boAt', 'Fire-Boltt', 'Apple', 'Samsung', 'Garmin', 'Fossil'],
-        tablet: ['iPad', 'Samsung Tab', 'Lenovo Tab', 'Xiaomi Pad', 'Realme Pad'],
+        laptop: ['Mac Mini', 'Macbook Air', 'Macbook Neo', 'HP'],
+        watch: ['Apple'],
+        tablet: ['iPad', 'Samsung Tab', 'Redmi Pad'],
         product: ['iPhone', 'Samsung', 'Vivo', 'Oppo', 'Redmi', 'Motorola']
     };
 
@@ -318,6 +318,7 @@ async function loadStoreLocations() {
         document.querySelector('.store-location-card')?.addEventListener('click', function() {
             const location = storeLocations[currentStoreIndex];
             if (location && location.map) {
+                // Try to extract place ID or open Google Maps
                 const mapUrl = location.map.includes('embed') 
                     ? location.map.replace('/embed?', '/maps?') 
                     : location.map;
@@ -710,7 +711,7 @@ function initSearch() {
     });
 }
 
-// ===== ✅ FIXED: TOUCH GESTURES (Only product.html swipe back disabled) =====
+// ===== TOUCH GESTURES =====
 function initTouchGestures() {
     let touchStartX = 0, touchEndX = 0;
     
@@ -721,9 +722,7 @@ function initTouchGestures() {
     document.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         const diff = touchEndX - touchStartX;
-        
-        // ✅ FIX: Sirf product.html par swipe back disable, baki sab pages pe normal
-        if (Math.abs(diff) > 100 && diff > 0 && !window.location.pathname.includes('product.html')) {
+        if (Math.abs(diff) > 100 && diff > 0 && window.location.pathname.includes('product.html')) {
             history.back();
         }
     }, { passive: true });
@@ -1659,7 +1658,7 @@ function renderProductDetail(product) {
                 </div>
             </div>
             
-            ${product.category !== "Watch" && product.variants && product.variants.length > 0 ? `
+            ${product.category !=="Watch" && product.variants && product.variants.length > 0 ? `
                 <div class="variant-section">
                     <h4>Select Storage & RAM</h4>
                     <div class="variant-grid">
@@ -1709,7 +1708,7 @@ function renderProductDetail(product) {
                         <span class="spec-label">RAM:</span>
                         <span class="spec-value">${ramFromVariant}</span>
                     </div>
-                    ` : ""}
+` : ""}
                     
                     <!-- DYNAMIC: Storage from variant -->
                     ${product.category !== "Watch" ? `
@@ -1717,16 +1716,16 @@ function renderProductDetail(product) {
                         <span class="spec-label">Storage:</span>
                         <span class="spec-value">${storageFromVariant}</span>
                     </div>
-                    ` : ""}
+` : ""}
                     
                     <!-- STATIC: Other specs from specs object (filter out RAM/Storage if present) -->
                     ${Object.entries(product.specs || {})
                         .filter(([key]) => {
-                            if (product.category === "Watch") {
-                                return key !== 'RAM' && key !== 'Storage';
-                            }
-                            return true;
-                        })
+  if (product.category === "Watch") {
+    return key !== 'RAM' && key !== 'Storage';
+  }
+  return true;
+})
                         .map(([key, value]) => `
                         <div class="spec-item">
                             <span class="spec-label">${key}:</span>
