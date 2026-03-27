@@ -1,5 +1,5 @@
 =============================================
-📱 Banashree Mobile - COMPLETE MANAGEMENT GUIDE
+📱 Store Name - COMPLETE MANAGEMENT GUIDE
 =============================================
 
 🎯 NEW POLISHED FEATURES ADDED:
@@ -62,7 +62,7 @@ Categories are clickable → redirect to products page
 1. Add Customer Numbers:
    File: notifications/customers.txt
    Format: Name | PhoneNumber | Device
-   Example: Ramesh | 9777966677 | Android
+   Example: Ramesh |  7609074640 | Android
 
 2. Edit Message Templates:
    File: notifications/messages.txt
