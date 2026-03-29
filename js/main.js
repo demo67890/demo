@@ -9,8 +9,101 @@
  * AND TYPING ANIMATION FOR SEARCH PLACEHOLDER (CATEGORY BASED)
  * AND SWIPE BACK PREVENTION (FIXED - DISABLED ON ALL PAGES)
  * AND FIXED SORTING FUNCTIONALITY (NOW WORKS FIRST TIME)
+ * AND PWA SUPPORT (SERVICE WORKER + INSTALL BUTTON)
  * 🚫 AUTO-SCROLL REMOVED - Only manual scroll
  */
+
+// ===== PWA: Register Service Worker =====
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered successfully:', registration.scope);
+            })
+            .catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+
+// ===== PWA: Custom Install Button =====
+let deferredPrompt;
+let installButtonVisible = false;
+
+// Capture beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('beforeinstallprompt event fired');
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Show custom install button
+    showInstallButton();
+});
+
+// Function to show install button
+function showInstallButton() {
+    if (installButtonVisible) return;
+    
+    // Check if button already exists
+    if (document.getElementById('pwa-install-btn')) return;
+    
+    const installBtn = document.createElement('button');
+    installBtn.id = 'pwa-install-btn';
+    installBtn.innerHTML = '📲 Install App';
+    installBtn.style.cssText = `
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        background: #0f172a;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 40px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    `;
+    
+    installBtn.onclick = async () => {
+        if (!deferredPrompt) return;
+        
+        installBtn.style.opacity = '0.7';
+        installBtn.disabled = true;
+        
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response to the install prompt: ${outcome}`);
+        
+        deferredPrompt = null;
+        installBtn.remove();
+        installButtonVisible = false;
+    };
+    
+    document.body.appendChild(installBtn);
+    installButtonVisible = true;
+}
+
+// Also show install button if app is not installed yet
+window.addEventListener('appinstalled', () => {
+    console.log('PWA was installed');
+    const installBtn = document.getElementById('pwa-install-btn');
+    if (installBtn) installBtn.remove();
+    installButtonVisible = false;
+    deferredPrompt = null;
+});
+
+// Check if app is already installed (standalone mode)
+if (window.matchMedia('(display-mode: standalone)').matches) {
+    console.log('App is running in standalone mode');
+    const installBtn = document.getElementById('pwa-install-btn');
+    if (installBtn) installBtn.remove();
+}
 
 document.addEventListener('DOMContentLoaded', async function() {
     // Prevent swipe back navigation (only edge swipe)

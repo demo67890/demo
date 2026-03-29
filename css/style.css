@@ -2675,12 +2675,130 @@ footer {
     transform: scale(1.1);
 }
 
+/* ✅ FIXED COPYRIGHT SECTION - FULLY VISIBLE ON MOBILE */
 .copyright {
     text-align: center;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.5);
-    font-size: 13px;
+    padding: 20px 0 15px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    line-height: 1.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+    margin-bottom: 0;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+    clear: both;
+    width: 100%;
+}
+
+.copyright .heart {
+    display: inline-block;
+    color: #ff4d4d;
+    font-size: 16px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    margin: 0 2px;
+}
+
+.copyright .developer-name {
+    color: #61dac2;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.copyright .developer-name:hover {
+    color: #4ec9b0;
+    text-shadow: 0 0 10px rgba(97, 218, 194, 0.5);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    35% { transform: scale(1); }
+    45% { transform: scale(1.08); }
+    55% { transform: scale(1); }
+}
+
+/* Mobile specific - ensure copyright is fully visible */
+@media (max-width: 767px) {
+    footer {
+        padding-bottom: 100px;
+    }
+    
+    .copyright {
+        padding: 15px 0 25px;
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+    
+    .copyright .heart {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    footer {
+        padding-bottom: 110px;
+    }
+    
+    .copyright {
+        padding: 12px 0 28px;
+    }
+}
+
+/* ===== PWA INSTALL BUTTON STYLES ===== */
+#pwa-install-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    animation: slideInUp 0.3s ease-out;
+}
+
+#pwa-install-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+#pwa-install-btn:active {
+    transform: scale(0.96);
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustment for install button */
+@media (max-width: 767px) {
+    #pwa-install-btn {
+        bottom: 80px;
+        right: 16px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
